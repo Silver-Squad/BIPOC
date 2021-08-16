@@ -34,8 +34,11 @@ function App (props) {
         <Route
           exact
           path="/homepage"
-          render={() => (
-            <h1>test</h1>
+          render={({ history }) => (
+            <HomePage
+              history={history}
+              handleSignupOrLogin={handleSignupOrLogin}
+            />
           )}
         />
         <Route
