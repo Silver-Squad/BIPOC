@@ -3,7 +3,8 @@ import { Route, Redirect, useHistory } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
 import Signup from "../Signup/Signup";
 import Login from "../Login/Login";
-import authService from "../../services/authService"
+import HomePage from "../HomePage/HomePage";
+import authService from "../../services/authService";
 import "./App.css";
 
 function App (props) {
@@ -32,6 +33,13 @@ function App (props) {
         />
         <Route
           exact
+          path="/homepage"
+          render={() => (
+            <h1>test</h1>
+          )}
+        />
+        <Route
+          exact
           path="/signup"
           render={({ history }) => (
             <Signup
@@ -50,7 +58,7 @@ function App (props) {
             />
           )}
         />
-        
+
       </>
     );
   }
