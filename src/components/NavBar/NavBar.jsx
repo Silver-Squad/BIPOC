@@ -30,7 +30,7 @@ export default function NavBar(props) {
   }, [props.user]);
 
   return (
-    <Disclosure as="nav" className="bg-white shadow-md">
+    <Disclosure as="nav" className="bg-current shadow-md">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -49,7 +49,7 @@ export default function NavBar(props) {
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
                   <Link to='/'>
-                  <img width="250" src="/images/Auto-Mastery-logo-v.2.png" alt='logo'/>
+                  <img width="150" src="/images/diversify-logo.png" alt='logo'/>
                   </Link>
                 </div>
                 <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
@@ -57,7 +57,7 @@ export default function NavBar(props) {
                         <a key={idx}
                           href={item.href}
                           className={classNames(
-                            item.current ? 'bg-gray-900 text-white' : 'border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium'
+                            item.current ? 'bg-gray-900 text-white' : 'border-indigo-500 text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium'
                           )}
                           aria-current={item.current ? 'page' : undefined}
                         >
