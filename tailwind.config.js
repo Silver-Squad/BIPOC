@@ -9,6 +9,12 @@ module.exports = {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
     },
+    backgroundColor: theme => ({
+       ...theme('colors'),
+       'homepage': '#588AA6', // background color for homepage
+       'search': '#E29C32', // search button color
+       'danger': '#e3342f',
+      })
   },
   variants: {
     extend: {},
