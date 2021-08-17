@@ -5,11 +5,10 @@ import { Link, useHistory } from "react-router-dom";
 import './NavBar.css';
 
 const navigation = [
-  { name: 'Dashboard', href: '/dashboard', current: false, loggedIn: [true]},
-  { name: 'Sales', href: '/sales', current: false, loggedIn: [true]},
-  { name: 'Goals', href: '/goals', current: false, loggedIn: [true] },
+  { name: 'How it Works', href: '/dashboard', current: false, loggedIn: [true]},
+  { name: 'Resources', href: '/sales', current: false, loggedIn: [true]},
   { name: 'About', href: '/about', current: false, loggedIn: [false] },
-  { name: 'KPI', href: '/kpi', current: false, loggedIn: [false] },
+  { name: 'Take the D&I Test', href: '/goals', current: false, loggedIn: [true] },
   { name: 'Sign Up', href: '/signup', current: false, loggedIn: [false] },
 ]
 
@@ -70,8 +69,10 @@ export default function NavBar(props) {
                    Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" 
                 </div> */}
               </div>
-              
-                { loggedIn ?  
+
+                { loggedIn ? 
+              /* conditional for logged in user or not */
+
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <button className="bg-white p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                   <span className="sr-only">View notifications</span>
