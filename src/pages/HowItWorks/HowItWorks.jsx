@@ -94,8 +94,8 @@ export default function HowItWorks (props) {
                 </div>
               </div>
 
-              <div className="bg-firstbox border-none leading-4 box-border h-130 w-275 p-4 rounded-lg min-w-min">
-                <div className="ml-8 mr-4 p-4">
+              <div className="bg-firstbox border-none leading-4 box-border h-130 w-275 p-4 rounded-lg min-w-min mr-10">
+                <div className="ml-8 p-4">
                 Companies answer the questions in the D&I Test and fill out the data needed for a comprehensive score
                 </div>
               </div>
@@ -107,14 +107,14 @@ export default function HowItWorks (props) {
                 2
                 </div>
               </div>
-              <div className="bg-altbox border-none leading-4 box-border h-130 w-275 p-4 rounded-lg min-w-min">
-                <div className="ml-10 mr-4 p-4">
+              <div className="bg-altbox border-none leading-4 box-border h-130 w-275 p-4 rounded-lg min-w-min mr-4">
+                <div className="ml-10 p-4">
                 We compile the data and information into a report that can be seen through percentages and statements
                 </div>
               </div>
             </div>
 
-            <div className="mt-0 ml-10">
+            <div className="mt-0 ml-40 pr-10">
               <img width="300"
               src="/images/undraw-data.png"
               alt='team-spirit'
@@ -135,8 +135,8 @@ export default function HowItWorks (props) {
                     </div>
                   </div>
 
-                  <div className="bg-firstbox border-none leading-4 box-border h-130 w-275 p-4 rounded-lg min-w-min">
-                    <div className="ml-8 mr-4 p-4">
+                  <div className="bg-firstbox border-none leading-4 box-border h-130 w-275 p-4 rounded-lg min-w-min mr-10">
+                    <div className="ml-8 p-4">
                     Set up your company account and verify the claim on the company
                     </div>
                   </div>
@@ -148,14 +148,14 @@ export default function HowItWorks (props) {
                     4
                     </div>
                   </div>
-                  <div className="bg-altbox border-none leading-4 box-border h-130 w-275 p-4 rounded-lg min-w-min">
-                    <div className="ml-10 mr-4 p-4">
+                  <div className="bg-altbox border-none leading-4 box-border h-130 w-275 p-4 rounded-lg min-w-min mr-4">
+                    <div className="ml-10 p-4">
                     Receive your score and overall report via e-mail and listed on your profile
                     </div>
                   </div>
                 </div>
 
-                <div className="mt-0 ml-10">
+                <div className="mt-0 ml-40 pr-10">
                   <img width="300"
                   src="/images/undraw-filing.png"
                   alt='team-spirit'
