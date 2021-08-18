@@ -72,41 +72,62 @@ export default function Homepage (props) {
       {/* steps section */}
       <div className="ml-4 mr-4 bg-white">
         <div className="pt-6">
-        <h2 className="pb-6 text-4xl text-black flex items-center justify-center">Get your company score in 4 steps</h2>
+        <h2 className="pb-2 text-4xl text-black flex items-center justify-center">Get your company score in 4 steps</h2>
         </div>
 
         <div className="flex items-center justify-center">
           <div className="grid grid-cols-4 gap-4">
 
-            <div className="bg-firstbox border-none font-bold leading-4 box-border h-130 w-275 p-4 rounded-lg">
-              <div className="font-extrabold text-3xl">
+            <div className="bg-none border-none box-border p-4">
+              <div className="font-extrabold text-6xl mt-1 absolute">
               1
               </div>
-              <div className="ml-6">
+            </div>
+            <div className="bg-none border-none box-border p-4">
+              <div className="font-extrabold text-6xl mt-1 absolute">
+              2
+              </div>
+            </div>
+            <div className="bg-none border-none box-border p-4">
+              <div className="font-extrabold text-6xl mt-1 absolute">
+              3
+              </div>
+            </div>
+            <div className="bg-none border-none h-130 w-275 p-4">
+              <div className="font-extrabold text-6xl mt-1 absolute">
+              4
+              </div>
+            </div>
+
+            <div className="bg-firstbox border-none font-bold leading-4 box-border h-130 w-275 p-4 rounded-lg min-w-min">
+              <div className="font-extrabold text-3xl">
+
+              </div>
+              <div className="ml-10">
               Answer the questions in the D&I Test and fill out the data needed for a comprehensive score
               </div>
             </div>
-            <div className="bg-altbox border-none font-bold leading-4 box-border h-130 w-275 p-4 rounded-lg">
+            <div className="bg-altbox border-none font-bold leading-4 box-border h-130 w-275 p-4 rounded-lg min-w-min">
               <div className="font-extrabold text-3xl">
-              2
+
               </div>
-              <div className="ml-6">
+              <div className="ml-12">
               Set up your company account and verify the claim on the company
               </div>
             </div>
-            <div className="bg-homepage border-none font-bold leading-4 box-border h-130 w-275 p-4 rounded-lg">
+            <div className="bg-homepage border-none font-bold leading-4 box-border h-130 w-275 p-4 rounded-lg min-w-min">
               <div className="font-extrabold text-3xl">
-              3
+
               </div>
-              <div className="ml-6">
+              <div className="ml-12">
               Set up your company account and verify the claim on the company
               </div>
             </div>
-            <div className="bg-altbox border-none font-bold leading-4 box-border h-130 w-275 p-4 rounded-lg">
+            <div className="bg-altbox border-none font-bold leading-4 box-border h-130 w-275 p-4 rounded-lg min-w-min">
               <div className="font-extrabold text-3xl">
-              4
+
               </div>
-              <div className="ml-6">
+              <div className="ml-12">
               Receive your score via e-mail and listed on your profile
               </div>
             </div>
