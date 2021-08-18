@@ -100,33 +100,21 @@ export default function Homepage (props) {
             </div>
 
             <div className="bg-firstbox border-none font-bold leading-4 box-border h-130 w-275 p-4 rounded-lg min-w-min">
-              <div className="font-extrabold text-3xl">
-
-              </div>
               <div className="ml-10">
               Answer the questions in the D&I Test and fill out the data needed for a comprehensive score
               </div>
             </div>
             <div className="bg-altbox border-none font-bold leading-4 box-border h-130 w-275 p-4 rounded-lg min-w-min">
-              <div className="font-extrabold text-3xl">
-
-              </div>
               <div className="ml-12">
               Set up your company account and verify the claim on the company
               </div>
             </div>
             <div className="bg-homepage border-none font-bold leading-4 box-border h-130 w-275 p-4 rounded-lg min-w-min">
-              <div className="font-extrabold text-3xl">
-
-              </div>
               <div className="ml-12">
               Set up your company account and verify the claim on the company
               </div>
             </div>
             <div className="bg-altbox border-none font-bold leading-4 box-border h-130 w-275 p-4 rounded-lg min-w-min">
-              <div className="font-extrabold text-3xl">
-
-              </div>
               <div className="ml-12">
               Receive your score via e-mail and listed on your profile
               </div>
