@@ -3,7 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import authService from "../../services/authService";
 import { useForm } from '../../hooks/useForm'
 
-export default function Homepage (props) {
+export default function HowItWorks (props) {
   const history = useHistory();
   const formRef = useRef();
   const [message, updateMessage] = useState('')
@@ -37,34 +37,36 @@ export default function Homepage (props) {
     return (
       // header container
       <div>
-        <div className="flex mb-4 mt-1 justify-center">
-          <div className="flex justify-center">
-            <img width="500"
-            src="/images/undraw-teamspirit.png"
-            alt='team-spirit'
-            />
-          </div>
-          <div className="mt-14">
-          <h2 className="mt-6 text-4xl text-black font-bold flex items-center justify-left">Diverse world.</h2>
-          <h2 className="mt-6 text-6xl text-black font-extrabold flex items-center justify-left">Diverse team.</h2>
-          </div>
-        </div>
+        <div className="flex items-center justify-center">
+          <div className="grid grid-cols-2 gap-4">
+              <div className="mt-8 ml-6">
+                <h2 className="mt-6 text-6xl text-black font-bold flex">How It Works</h2>
+                <h2 className="mt-6 text-md text-black flex">
+                We utilize qualitative and quantitative data to create a comprehensive score of a company’s diversity and inclusion. We ask companies to be transparent and provide the data and information needed in order to receive a score.   </h2>
 
-      {/* search section */}
-      <div className="bg-homepage">
-        <div className="pt-6">
-        <h2 className="pl-20 text-4xl text-white flex items-center justify-left">Work culture found easily...</h2>
-        <h2 className="pl-20 text-1xl text-white flex items-center justify-left">Search for a company's D&I score here</h2>
-        </div>
-        <div className="pl-20 pt-2 pb-8">
-          <div className="bg-white w-10/12 flex items-center justify-center rounded-full shadow-xl">
-            <input className="rounded-l-full w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none" id="search" type="text" placeholder="🔍   company name">
-            </input>
-            <div className="p-4">
-              <button className="bg-search text-white rounded-full p-2 w-40 hover:bg-altbox focus:outline-none flex items-center justify-center font-bold">
-                Search
-              </button>
+                <h2 className="mt-6 text-md text-black flex">
+                These scores are imperfect and subject to change just as people and companies are. We focus on providing the tools for success and creating diverse teams to reflect a diverse world. </h2>
+
             </div>
+            <div className="mt-6">
+              <img width="500"
+              src="/images/undraw-todo.png"
+              alt='team-spirit'
+              />
+              </div>
+            </div>
+      </div>
+
+      <div>
+        <div className="bg-askfor border-none leading-4 box-border h-15 w-275 p-4 mt-10 ml-60 mr-60 rounded-lg min-w-min">
+          <div className="bg-askfor border-none leading-4 box-border h-15 w-275 p-10 ml-10 mr-10 rounded-lg min-w-min">
+            <div className="mb-4">
+            What we ask for:
+            </div>
+            <li className="mb-1">Company mission and general information</li>
+            <li className="mb-1">Demographic makeup of the company</li>
+            <li className="mb-1">Gartner Inclusion Index</li>
+            <li className="mb-1">Company Hiring Practices</li>
           </div>
         </div>
       </div>
@@ -72,7 +74,7 @@ export default function Homepage (props) {
       {/* steps section */}
       <div className="ml-4 mr-4 bg-white">
         <div className="pt-6">
-        <h2 className="pb-2 text-4xl text-black flex items-center justify-center">Get your company score in 4 steps</h2>
+        <h2 className="pb-2 text-4xl text-black flex items-center justify-center">The 4 steps to get a report</h2>
         </div>
 
         <div className="flex items-center justify-center">

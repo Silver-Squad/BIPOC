@@ -4,6 +4,7 @@ import NavBar from "../../components/NavBar/NavBar";
 import Signup from "../Signup/Signup";
 import Login from "../Login/Login";
 import HomePage from "../HomePage/HomePage";
+import HowItWorks from "../HowItWorks/HowItWorks";
 import authService from "../../services/authService";
 import "./App.css";
 
@@ -36,6 +37,16 @@ function App (props) {
           path="/homepage"
           render={({ history }) => (
             <HomePage
+              history={history}
+              handleSignupOrLogin={handleSignupOrLogin}
+            />
+          )}
+        />
+        <Route
+          exact
+          path="/howitworks"
+          render={({ history }) => (
+            <HowItWorks
               history={history}
               handleSignupOrLogin={handleSignupOrLogin}
             />
