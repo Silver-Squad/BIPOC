@@ -1,5 +1,4 @@
-const express = require('express');
-const router = express.Router();
+const router = require('express').Router();
 const usersCtrl = require('../controllers/users');
 
 /*---------- Public Routes ----------*/
@@ -11,6 +10,7 @@ const usersCtrl = require('../controllers/users');
 router.use(require("../config/auth"));
 router.get("/", checkAuth, usersCtrl.index)
 
+/*--- HELPER FUNCTIONS  ---*/
 function checkAuth(req, res, next) {
   if (req.user) return next();
   return res.status(401).json({msg: 'Not Authorized'});

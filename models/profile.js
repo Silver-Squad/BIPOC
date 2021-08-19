@@ -8,7 +8,7 @@ const scoreSchema = new Schema (
     timestamps: true
 });
 
-const companySchema = new Schema(
+const profileSchema = new Schema(
   {
     name: {
       type: String,
@@ -28,4 +28,4 @@ const companySchema = new Schema(
   }
 );
 
-module.exports = mongoose.model("Company", companySchema);
+module.exports = mongoose.model("Company", profileSchema);
