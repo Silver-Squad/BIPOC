@@ -4,6 +4,7 @@ import NavBar from "../../components/NavBar/NavBar";
 import Signup from "../Signup/Signup";
 import Login from "../Login/Login";
 import authService from "../../services/authService"
+import CompanyProfile from "../../pages/CompanyProfile/CompanyProfile"
 import "./App.css";
 
 function App (props) {
@@ -23,6 +24,7 @@ function App (props) {
     return (
       <>
         <NavBar user={user} handleLogout={handleLogout}/>
+
         <Route
           exact
           path="/"
@@ -30,6 +32,16 @@ function App (props) {
             <h1>hello</h1>
           )}
         />
+        {/* route for company profiles */}
+        <Route 
+          exact path='/:company' 
+          render={(props)=>
+            <CompanyProfile {...props} 
+            currentUser={this.state.user} 
+            />}
+        />
+
+
         <Route
           exact
           path="/signup"
