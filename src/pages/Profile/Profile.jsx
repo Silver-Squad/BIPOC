@@ -3,6 +3,17 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { SortAscendingIcon, UsersIcon } from '@heroicons/react/solid'
 
+const tabs = [
+  { name: 'Overview', href: '#overview', current: true,},
+  { name: 'Initiatives', href: '#initiatives', current: false,},
+  { name: 'Demographics', href: '#demographics', current: false,},
+  { name: 'Detailed Score', href: '#detailedscore', current: false,},
+  { name: 'Inclusion Index', href: '#inclusionindex', current: false,},
+]
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
+}
 
 export default function Profile(props) {
     let history = useHistory();
@@ -29,18 +40,53 @@ export default function Profile(props) {
               Search
           </button>
         </div>
-        <div className="h-44 mt-10 mx-auto w-5/6 bg-black overflow-hidden shadow rounded-lg divide-y divide-gray-200">
-          <div className="px-4 py-5 sm:px-6">
-            
+        {/* top card */}
+        <div className="w-5/6 mx-auto flex">
+
+          {/* company info section */}
+          <div className="h-44 mt-10 mx-auto w-3/5 bg-gray-200 overflow-hidden shadow rounded-lg">
+            <div className="px-4 py-5 sm:px-6">
+              
+            </div>
+          </div>
+
+          {/* score section */}
+          <div className="ml-5 h-44 mt-10 mx-auto w-2/5 bg-gray-200 overflow-hidden shadow rounded-lg">
+            <div className="px-4 py-5 sm:px-6">
+              
+            </div>
           </div>
         </div>
 
-        <div className="h-3/4 mt-10 mx-auto w-5/6 bg-black overflow-hidden shadow rounded-lg divide-y divide-gray-200">
-          <div className="h-16 px-4 py-5 sm:px-6">
+
+        {/* bottom card */}
+        <div className="mt-10 mx-auto w-5/6 overflow-hidden shadow rounded-lg">
+
+          {/* tab section */}
+          <div className="tabs  bg-current h-16 px-4 py-5 sm:px-6">
+        
+              <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
+                    {tabs.map((item, idx) => (
+                          <a key={idx}
+                            href={item.href}
+                            className={classNames(
+                              item.current ? 'border-b-2 font-medium border-gray-300 pt-1 pb-4 px-10 rounded-t-2xl bg-gray-300 text-black' : ' text-white inline-flex items-center px-1 pt-1  text-md font-medium pb-5'
+                            )}
+                            aria-current={item.current ? 'page' : undefined}
+                          >
+                            {item.name}
+                          </a>
+                        ))}
+                </div>
             
           </div>
-          <div className="h-96 px-4 py-5 sm:p-6">
-            
+
+          {/* content section */}
+          <div className="bg-gray-300 h-96 px-4 py-5 sm:p-6">
+            <div className="bg-white w-7/8 mx-auto">
+             <h1 id="overview">Overview</h1>
+             <h1 id="initiatives">Initiatives</h1>
+            </div>  
           </div>
         </div>
       </main>
