@@ -4,7 +4,7 @@ import NavBar from "../../components/NavBar/NavBar";
 import Signup from "../Signup/Signup";
 import Login from "../Login/Login";
 import authService from "../../services/authService"
-import CompanyProfile from "../../pages/CompanyProfile/CompanyProfile"
+import Profile from "../../pages/Profile/Profile"
 import "./App.css";
 
 function App (props) {
@@ -34,11 +34,14 @@ function App (props) {
         />
         {/* route for company profiles */}
         <Route 
-          exact path='/:company' 
-          render={(props)=>
-            <CompanyProfile {...props} 
-            currentUser={this.state.user} 
-            />}
+          exact
+          path='/profile' 
+          render={({history}) => (
+            <Profile 
+            history={history}
+            currentUser={user} 
+            />
+          )}
         />
 
 
