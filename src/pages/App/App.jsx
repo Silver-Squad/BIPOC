@@ -5,6 +5,7 @@ import Signup from "../Signup/Signup";
 import Login from "../Login/Login";
 import HomePage from "../HomePage/HomePage";
 import HowItWorks from "../HowItWorks/HowItWorks";
+import Resources from "../Resources/Resources";
 import authService from "../../services/authService";
 import "./App.css";
 
@@ -47,6 +48,16 @@ function App (props) {
           path="/howitworks"
           render={({ history }) => (
             <HowItWorks
+              history={history}
+              handleSignupOrLogin={handleSignupOrLogin}
+            />
+          )}
+        />
+        <Route
+          exact
+          path="/resources"
+          render={({ history }) => (
+            <Resources
               history={history}
               handleSignupOrLogin={handleSignupOrLogin}
             />
