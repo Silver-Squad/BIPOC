@@ -3,10 +3,13 @@ import { Route, Redirect, useHistory } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
 import Signup from "../Signup/Signup";
 import Login from "../Login/Login";
+
 import HomePage from "../HomePage/HomePage";
 import HowItWorks from "../HowItWorks/HowItWorks";
 import Resources from "../Resources/Resources";
 import authService from "../../services/authService";
+import Profile from "../../pages/Profile/Profile"
+
 import "./App.css";
 
 function App (props) {
@@ -26,6 +29,7 @@ function App (props) {
     return (
       <>
         <NavBar user={user} handleLogout={handleLogout}/>
+
         <Route
           exact
           path="/"
@@ -33,6 +37,19 @@ function App (props) {
             <h1>hello</h1>
           )}
         />
+        {/* route for company profiles */}
+        <Route 
+          exact
+          path='/profile' 
+          render={({history}) => (
+            <Profile 
+            history={history}
+            currentUser={user} 
+            />
+          )}
+        />
+
+
         <Route
           exact
           path="/homepage"

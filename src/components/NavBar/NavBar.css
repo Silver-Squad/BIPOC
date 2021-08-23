@@ -4,3 +4,6 @@
 ,#014ba7,#0183d0);
   background-position: center;
 }
+
+.bg-current { 
+  background-color: #111A25; }
