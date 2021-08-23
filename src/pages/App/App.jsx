@@ -3,8 +3,13 @@ import { Route, Redirect, useHistory } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
 import Signup from "../Signup/Signup";
 import Login from "../Login/Login";
-import authService from "../../services/authService"
+
+import HomePage from "../HomePage/HomePage";
+import HowItWorks from "../HowItWorks/HowItWorks";
+import Resources from "../Resources/Resources";
+import authService from "../../services/authService";
 import Profile from "../../pages/Profile/Profile"
+
 import "./App.css";
 
 function App (props) {
@@ -47,6 +52,36 @@ function App (props) {
 
         <Route
           exact
+          path="/homepage"
+          render={({ history }) => (
+            <HomePage
+              history={history}
+              handleSignupOrLogin={handleSignupOrLogin}
+            />
+          )}
+        />
+        <Route
+          exact
+          path="/howitworks"
+          render={({ history }) => (
+            <HowItWorks
+              history={history}
+              handleSignupOrLogin={handleSignupOrLogin}
+            />
+          )}
+        />
+        <Route
+          exact
+          path="/resources"
+          render={({ history }) => (
+            <Resources
+              history={history}
+              handleSignupOrLogin={handleSignupOrLogin}
+            />
+          )}
+        />
+        <Route
+          exact
           path="/signup"
           render={({ history }) => (
             <Signup
@@ -65,7 +100,7 @@ function App (props) {
             />
           )}
         />
-        
+
       </>
     );
   }

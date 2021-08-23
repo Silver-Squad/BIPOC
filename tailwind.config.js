@@ -9,6 +9,16 @@ module.exports = {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
     },
+    backgroundColor: theme => ({
+       ...theme('colors'),
+       'homepage': '#588AA6', // background color for homepage
+       'search': '#E29C32', // search button color for homepage
+       'test': '#2A3B50', // test button color for homepage
+       'firstbox': '#93C9E7', // first box color for steps container on homepage
+       'altbox': '#9DDBCC', // alt box color for steps container on homepage
+       'navbar': '#111A25', // bottom nav bar color
+       'askfor': '#C2C9D2', // box color for askfor container on how it works page
+      })
   },
   variants: {
     extend: {},
