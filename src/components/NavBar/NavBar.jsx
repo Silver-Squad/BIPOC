@@ -9,10 +9,7 @@ const navigation = [
   { name: 'Resources', href: '/resources', current: false, loggedIn: [false]},
   { name: 'About', href: '/about', current: false, loggedIn: [false] },
   { name: 'Take the D&I Test', href: '/dnitest', current: false, loggedIn: [true] },
-  { name: 'Sign Up', href: '/signup', current: false, loggedIn: [false] },
-  { name: 'Homepage', href: '/homepage', current: false, loggedIn: [false] },
-  { name: 'How It Works', href: '/howitworks', current: false, loggedIn: [false] },
-  { name: 'Resources', href: '/resources', current: false, loggedIn: [false] },
+  { name: 'Sign Up', href: '/signup', current: false, loggedIn: [false] },  
 ]
 
 

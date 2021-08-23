@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Route, Redirect, useHistory } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
+import Footer from "../../components/Footer/Footer";
 import Signup from "../Signup/Signup";
 import Login from "../Login/Login";
-
 import HomePage from "../HomePage/HomePage";
 import HowItWorks from "../HowItWorks/HowItWorks";
 import Resources from "../Resources/Resources";
@@ -34,7 +34,9 @@ function App (props) {
           exact
           path="/"
           render={() => (
-            <h1>hello</h1>
+            <HomePage
+              history={history}
+            />
           )}
         />
         {/* route for company profiles */}
@@ -100,7 +102,7 @@ function App (props) {
             />
           )}
         />
-
+        <Footer />
       </>
     );
   }
