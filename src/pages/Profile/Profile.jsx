@@ -1,7 +1,7 @@
 import './Profile.css';
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { SortAscendingIcon, UsersIcon } from '@heroicons/react/solid'
+import { UsersIcon } from '@heroicons/react/solid'
 
 const tabs = [
   { name: 'Overview', href: '#overview', current: true,},
@@ -29,7 +29,7 @@ export default function Profile(props) {
               type="text"
               name="name"
               id="name"
-              className="pl-10 shadow-md focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 px-4 rounded-full mr-4"
+              className="pl-10 shadow-md focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 px-10 rounded-full mr-4"
               placeholder="Company Name"
             />
           </div>
@@ -44,7 +44,7 @@ export default function Profile(props) {
         <div className="w-5/6 mx-auto flex">
 
           {/* company info section */}
-          <div className="h-44 mt-10 mx-auto w-3/5 bg-gray-200 overflow-hidden shadow rounded-lg">
+          <div className="h-44 mt-10  w-3/5 bg-gray-200 overflow-hidden shadow rounded-lg">
             {/* {company img} */}
             <div className="flex mt-4 px-4 py-5 sm:px-6">
             <img
@@ -93,7 +93,7 @@ export default function Profile(props) {
           </div>
 
           {/* score section */}
-          <div className="ml-5 h-44 mt-10 mx-auto w-2/5 bg-gray-200 overflow-hidden shadow rounded-lg">
+          <div className="ml-8 h-44 mt-10 w-2/5 bg-gray-200 overflow-hidden shadow rounded-lg">
             <div className="flex px-4 py-5 sm:px-6">
               <div className="align-center w-2/3">
                 <h1 className="text-3xl font-medium">Overall Score</h1>
@@ -128,11 +128,31 @@ export default function Profile(props) {
 
 
         {/* bottom card */}
-        <div className="mt-10 mx-auto w-5/6 overflow-hidden shadow rounded-lg">
+        <div className="mt-10 mb-10 mx-auto w-5/6 overflow-hidden shadow rounded-lg">
 
           {/* tab section */}
           <div className="tabs  bg-current h-16 px-4 py-5 sm:px-6">
-        
+            <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
+              <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Overview</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Initiatives</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Demographics</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Detailed Score</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Inclusion Index</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          {/* <div className="tabs  bg-current h-16 px-4 py-5 sm:px-6">
               <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
                     {tabs.map((item, idx) => (
                           <a key={idx}
@@ -145,15 +165,18 @@ export default function Profile(props) {
                             {item.name}
                           </a>
                         ))}
-                </div>
-            
-          </div>
+              </div> 
+          </div> */}
 
           {/* content section */}
+
           <div className="bg-gray-300 h-96 px-4 py-5 sm:p-6">
             <div className="bg-white w-7/8 mx-auto">
-             <h1 id="overview">Overview</h1>
-             <h1 id="initiatives">Initiatives</h1>
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+              </div>
             </div>  
           </div>
         </div>
@@ -162,3 +185,6 @@ export default function Profile(props) {
 
 
 }
+
+
+
