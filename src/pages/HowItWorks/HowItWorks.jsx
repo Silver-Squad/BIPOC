@@ -1,41 +1,11 @@
-import React, { useState, useRef, useEffect } from "react";
-import { Link, useHistory } from "react-router-dom";
-import authService from "../../services/authService";
-import { useForm } from '../../hooks/useForm'
 
-export default function HowItWorks (props) {
-  const history = useHistory();
-  const formRef = useRef();
-  const [message, updateMessage] = useState('')
-  const [formInvalid, setValidForm] = useState(true)
-  const [formValue, handleChange] = useForm({
-    email: "",
-    password: "",
-    passwordConf: "",
-  });
-
-  // useEffect(() => {
-  //   formRef.current.checkValidity() ? setValidForm(false) : setValidForm(true);
-  //   updateMessage('');
-  // }, [formValue]);
-
-  // const handleSubmit = async (e) => {
-  //   const { handleSignupOrLogin } = props;
-  //   console.log(formValue.email, formValue.password)
-  //   e.preventDefault();
-  //   try {
-  //     if(formValue.password !== formValue.passwordConf)
-  //       throw Error("Passwords must match")
-  //     await authService.signup(formValue);
-  //     handleSignupOrLogin()
-  //     history.push("/");
-  //   } catch (err) {
-  //     updateMessage(err.message);
-  //   }
-  // };
+export default function HowItWorks () {
 
     return (
-      // header container
+      <>
+
+      {/* header container */}
+
       <div>
         <div className="flex items-center justify-center">
           <div className="grid grid-cols-2 gap-4">
@@ -46,16 +16,15 @@ export default function HowItWorks (props) {
 
                 <h2 className="mt-6 text-md text-black flex">
                 These scores are imperfect and subject to change just as people and companies are. We focus on providing the tools for success and creating diverse teams to reflect a diverse world. </h2>
-
-            </div>
-            <div className="mt-10">
-              <img width="500"
-              src="/images/undraw-todo.png"
-              alt='team-spirit'
-              />
               </div>
-            </div>
-      </div>
+              <div className="mt-10">
+                <img width="500"
+                src="/images/undraw-todo.png"
+                alt='team-spirit'
+                />
+              </div>
+          </div>
+        </div>
 
       <div>
         <div className="bg-askfor border-none leading-4 box-border h-15 w-275 p-4 mt-10 ml-60 mr-60 rounded-lg min-w-min">
@@ -69,23 +38,23 @@ export default function HowItWorks (props) {
             <li className="mb-1">Company Hiring Practices</li>
           </div>
         </div>
-      </div>
+      
 
-      {/* steps section */}
+      {/* steps section */ }
+
       <div className="ml-4 mr-4 bg-white">
         <div className="pt-6">
-        <h2 className="pb-2 text-4xl text-black font-bold flex items-center justify-center">The 4 steps to get a report</h2>
+          <h2 className="pb-2 text-4xl text-black font-bold flex items-center justify-center">The 4 steps to get a report</h2>
         </div>
 
         <div className="flex items-center justify-center">
           <div className="grid grid-cols-2 gap-4">
-
-          <div className="mt-0">
-            <img width="300"
-            src="/images/undraw-focus.png"
-            alt='team-spirit'
-            />
-            </div>
+            <div className="mt-0">
+              <img width="300"
+              src="/images/undraw-focus.png"
+              alt='team-spirit'
+              />
+            </div>  
 
             <div>
               <div className="bg-none border-none box-border pb-7 pl-4 mt-5">
@@ -99,7 +68,7 @@ export default function HowItWorks (props) {
                 Companies answer the questions in the D&I Test and fill out the data needed for a comprehensive score
                 </div>
               </div>
-            </div>
+        </div>
 
             <div>
               <div className="bg-none border-none box-border pb-7 pl-4 mt-5">
@@ -163,27 +132,19 @@ export default function HowItWorks (props) {
                   </div>
 
           </div>
-        </div>
 
-        <div className="p-10 pt-6 pb-8">
-            <div className="p-4 flex items-center justify-center">
-              <button className="bg-test text-white rounded-full w-5/12 p-2 hover:bg-homepage focus:outline-none flex items-center justify-center font-extrabold">
-                Begin Test
-              </button>
-            </div>
-        </div>
-      </div>
-
-        <div className="bg-navbar text-white">
-          <div className="flex items-center justify-center">
-            <div className="grid grid-cols-4 gap-4 m-20">
-              <div>How it works</div>
-              <div>Resources</div>
-              <div>Contact US</div>
-              <div>Company D&I Test</div>
-            </div>
+          <div className="p-10 pt-6 pb-8">
+              <div className="p-4 flex items-center justify-center">
+                <button className="bg-test text-white rounded-full w-5/12 p-2 hover:bg-homepage focus:outline-none flex items-center justify-center font-extrabold">
+                  Begin Test
+                </button>
+              </div>
           </div>
-        </div>
+        </div>      
       </div>
+     </div>
+    </div>
+    
+    </>
     );
   }
