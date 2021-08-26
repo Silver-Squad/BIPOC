@@ -12,6 +12,8 @@ import Profile from "../../pages/Profile/Profile"
 import Resources from "../Resources/Resources";
 import Articles from "../Resources/Articles";
 
+import Test from "../Quiz/Test"
+
 import "./App.css";
 
 function App (props) {
@@ -87,6 +89,16 @@ function App (props) {
           path="/resources/articles"
           render={({ history }) => (
             <Articles
+              history={history}
+              handleSignupOrLogin={handleSignupOrLogin}
+            />
+          )}
+        />
+        <Route
+          exact
+          path="/test"
+          render={({ counter }) => (
+            <Test
               history={history}
               handleSignupOrLogin={handleSignupOrLogin}
             />
