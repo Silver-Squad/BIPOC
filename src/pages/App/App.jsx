@@ -6,9 +6,11 @@ import Login from "../Login/Login";
 
 import HomePage from "../HomePage/HomePage";
 import HowItWorks from "../HowItWorks/HowItWorks";
-import Resources from "../Resources/Resources";
 import authService from "../../services/authService";
 import Profile from "../../pages/Profile/Profile"
+
+import Resources from "../Resources/Resources";
+import Articles from "../Resources/Articles";
 
 import "./App.css";
 
@@ -38,13 +40,13 @@ function App (props) {
           )}
         />
         {/* route for company profiles */}
-        <Route 
+        <Route
           exact
-          path='/profile' 
+          path='/profile'
           render={({history}) => (
-            <Profile 
+            <Profile
             history={history}
-            currentUser={user} 
+            currentUser={user}
             />
           )}
         />
@@ -75,6 +77,16 @@ function App (props) {
           path="/resources"
           render={({ history }) => (
             <Resources
+              history={history}
+              handleSignupOrLogin={handleSignupOrLogin}
+            />
+          )}
+        />
+        <Route
+          exact
+          path="/resources/articles"
+          render={({ history }) => (
+            <Articles
               history={history}
               handleSignupOrLogin={handleSignupOrLogin}
             />
