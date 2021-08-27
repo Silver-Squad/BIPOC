@@ -10,7 +10,12 @@ import authService from "../../services/authService";
 import Profile from "../../pages/Profile/Profile"
 
 import Resources from "../Resources/Resources";
-import Articles from "../Resources/Articles";
+import Research from "../Resources/Research";
+import Acceleration from "../Resources/Acceleration";
+import Community from "../Resources/Community";
+import Education from "../Resources/Education";
+import Events from "../Resources/Events";
+import GetHired from "../Resources/GetHired";
 
 import Test from "../Quiz/Test"
 
@@ -84,16 +89,68 @@ function App (props) {
             />
           )}
         />
+
         <Route
           exact
-          path="/resources/articles"
+          path="/resources/research"
           render={({ history }) => (
-            <Articles
+            <Research
               history={history}
               handleSignupOrLogin={handleSignupOrLogin}
             />
           )}
         />
+        <Route
+          exact
+          path="/resources/acceleration"
+          render={({ history }) => (
+            <Acceleration
+              history={history}
+              handleSignupOrLogin={handleSignupOrLogin}
+            />
+          )}
+        />
+        <Route
+          exact
+          path="/resources/community"
+          render={({ history }) => (
+            <Community
+              history={history}
+              handleSignupOrLogin={handleSignupOrLogin}
+            />
+          )}
+        />
+        <Route
+          exact
+          path="/resources/education"
+          render={({ history }) => (
+            <Education
+              history={history}
+              handleSignupOrLogin={handleSignupOrLogin}
+            />
+          )}
+        />
+        <Route
+          exact
+          path="/resources/events"
+          render={({ history }) => (
+            <Events
+              history={history}
+              handleSignupOrLogin={handleSignupOrLogin}
+            />
+          )}
+        />
+        <Route
+          exact
+          path="/resources/gethired"
+          render={({ history }) => (
+            <GetHired
+              history={history}
+              handleSignupOrLogin={handleSignupOrLogin}
+            />
+          )}
+        />
+
         <Route
           exact
           path="/test"

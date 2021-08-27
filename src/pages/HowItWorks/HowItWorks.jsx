@@ -168,7 +168,8 @@ export default function HowItWorks (props) {
         <div className="p-10 pt-6 pb-8">
             <div className="p-4 flex items-center justify-center">
               <button className="bg-test text-white rounded-full w-5/12 p-2 hover:bg-homepage focus:outline-none flex items-center justify-center font-extrabold">
-                Begin Test
+              <a rel="noopener noreferrer" href="/test">
+              Begin Test</a>
               </button>
             </div>
         </div>

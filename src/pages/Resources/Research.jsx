@@ -5,7 +5,7 @@ import { useForm } from '../../hooks/useForm'
 import "./Resources.css";
 import YoutubeEmbed from "./YoutubeEmbed";
 
-export default function Articles (props) {
+export default function Research (props) {
   const history = useHistory();
   const formRef = useRef();
   const [message, updateMessage] = useState('')
@@ -103,17 +103,6 @@ export default function Articles (props) {
               <li className="mb-4 underline text-blue-600 hover:text-blue-800 visited:text-purple-600"><a rel="noopener noreferrer" target="_blank" href="https://www.vox.com/2020/6/30/21300294/bipoc-what-does-it-mean-critical-race-linguistics-jonathan-rosa-deandra-miles-hercules/">Why the term “BIPOC” is so complicated, explained by linguists</a></li>
               <button className="bg-test text-white rounded-full w-5/12 p-2 hover:bg-homepage focus:outline-none flex items-center justify-center font-extrabold mb-4"><a class="btn btn-secondary btn-xl rounded-pill" rel="noopener noreferrer" target="_blank" href="./pdfs/Savanta_BLM_report.pdf" Download>Savanta BLM Everywhere - Download Report PDF</a></button>
               <button className="bg-test text-white rounded-full w-5/12 p-2 hover:bg-homepage focus:outline-none flex items-center justify-center font-extrabold"><a class="btn btn-secondary btn-xl rounded-pill" rel="noopener noreferrer" target="_blank" href="./pdfs/Racial_Diversity_Roadmap.pdf" Download>Roadmap for Anti-Racism in Tech Pact - Download PDF</a></button>
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-navbar text-white">
-          <div className="flex items-center justify-center">
-            <div className="grid grid-cols-4 gap-4 m-20">
-              <div>How it works</div>
-              <div>Resources</div>
-              <div>Contact US</div>
-              <div>Company D&I Test</div>
             </div>
           </div>
         </div>

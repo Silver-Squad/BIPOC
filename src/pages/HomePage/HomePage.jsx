@@ -126,22 +126,12 @@ export default function Homepage (props) {
         <div className="p-10 pt-6 pb-8">
             <div className="p-4 flex items-center justify-center">
               <button className="bg-test text-white rounded-full w-5/12 p-2 hover:bg-homepage focus:outline-none flex items-center justify-center font-extrabold">
-                Begin Test
+              <a rel="noopener noreferrer" href="/test">
+              Begin Test</a>
               </button>
             </div>
         </div>
       </div>
-
-        <div className="bg-navbar text-white">
-          <div className="flex items-center justify-center">
-            <div className="grid grid-cols-4 gap-4 m-20">
-              <div>How it works</div>
-              <div>Resources</div>
-              <div>Contact US</div>
-              <div>Company D&I Test</div>
-            </div>
-          </div>
-        </div>
       </div>
     );
   }

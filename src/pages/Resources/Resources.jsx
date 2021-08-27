@@ -83,7 +83,7 @@ export default function HowItWorks (props) {
                 <div className="ml-10 p-10">
                 Job Board for underrepresented folks in tech
                 </div>
-                <div className="flex justify-end mr-8 underline hover:text-blue-800 visited:text-purple-600"><a rel="noopener noreferrer" target="_blank" href="">
+                <div className="flex justify-end mr-8 underline hover:text-blue-800 visited:text-purple-600"><a rel="noopener noreferrer" target="_blank" href="/resources/gethired">
                 Read More</a>
                 </div>
               </div>
@@ -99,7 +99,7 @@ export default function HowItWorks (props) {
                 <div className="ml-10 p-10">
                 Compilation of ongoing and upcoming conferences, hackathons, meet-ups and networking communities to help people support each other in tech
                 </div>
-                <div className="flex justify-end mr-8 underline hover:text-blue-800 visited:text-purple-600"><a rel="noopener noreferrer" target="_blank" href="">
+                <div className="flex justify-end mr-8 underline hover:text-blue-800 visited:text-purple-600"><a rel="noopener noreferrer" target="_blank" href="/resources/events">
                 Read More</a>
                 </div>
               </div>
@@ -116,7 +116,7 @@ export default function HowItWorks (props) {
                 <div className="ml-10 p-10">
                 Collection of resources of different diversity intiatives that companies can use to practice within their workplace
                 </div>
-                <div className="flex justify-end mr-8 underline hover:text-blue-800 visited:text-purple-600"><a rel="noopener noreferrer" target="_blank" href="">
+                <div className="flex justify-end mr-8 underline hover:text-blue-800 visited:text-purple-600"><a rel="noopener noreferrer" target="_blank" href="/resources/acceleration">
                 Read More</a>
                 </div>
               </div>
@@ -132,7 +132,7 @@ export default function HowItWorks (props) {
                 <div className="ml-10 p-10">
                 Underrepresented people and communities share their stories and experiences in tech
                 </div>
-                <div className="flex justify-end mr-8 underline hover:text-blue-800 visited:text-purple-600"><a rel="noopener noreferrer" target="_blank" href="">
+                <div className="flex justify-end mr-8 underline hover:text-blue-800 visited:text-purple-600"><a rel="noopener noreferrer" target="_blank" href="/resources/community">
                 Read More</a>
                 </div>
               </div>
@@ -148,7 +148,7 @@ export default function HowItWorks (props) {
                 <div className="ml-10 p-10">
                 Scholarships for bootcamps, universities and tuition-free bootcamps to help underrepresented students and career-changers break into tech without the financial roacdblock
                 </div>
-                <div className="flex justify-end mr-8 underline hover:text-blue-800 visited:text-purple-600"><a rel="noopener noreferrer" target="_blank" href="">
+                <div className="flex justify-end mr-8 underline hover:text-blue-800 visited:text-purple-600"><a rel="noopener noreferrer" target="_blank" href="/resources/education">
                 Read More</a>
                 </div>
               </div>
@@ -164,7 +164,7 @@ export default function HowItWorks (props) {
                 <div className="ml-10 p-10">
                 Informational resources that provide insight into the status of diversity and inclusion in the workplace
                 </div>
-                <div className="flex justify-end mr-8 underline hover:text-blue-800 visited:text-purple-600"><a rel="noopener noreferrer" target="_blank" href="/resources/articles">
+                <div className="flex justify-end mr-8 underline hover:text-blue-800 visited:text-purple-600"><a rel="noopener noreferrer" target="_blank" href="/resources/research">
                 Read More</a>
                 </div>
               </div>
