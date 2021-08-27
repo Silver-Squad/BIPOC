@@ -5,7 +5,15 @@ import PropTypes from 'prop-types';
 function Result(props) {
   return (
     <div className="result">
-      You prefer <strong>{props.quizResult}</strong>!
+      You scored <strong>{props.quizResult}</strong>!
+      <form class="w-full max-w-sm">
+        <div class="flex items-center border-b border-teal-500 py-2">
+          <input class="appearance-none bg-transparent border-none w-full text-black mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="enter email" aria-label="Full name"></input>
+          <button className="bg-search text-white rounded-full hover:bg-altbox focus:outline-none pl-10 pr-10 font-bold">
+            Send Results
+          </button>
+        </div>
+      </form>
     </div>
   );
 }
