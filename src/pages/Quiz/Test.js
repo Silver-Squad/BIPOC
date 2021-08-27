@@ -123,12 +123,16 @@ class Test extends Component {
 
     render() {
       return (
-        <div className="App">
-          <div className="App-header">
-            <img src="./favicon.ico" className="App-logo" alt="logo" />
-            <h2>D&I Quiz</h2>
+        <div className="QuizContainer">
+          <div className="Quiz">
+            <div className="Quiz-header">
+              <img src="./favicon.ico" className="App-logo" alt="logo" />
+            </div>
+            <div className="Quiz-header-2">
+              <h2>Diversity & Inclusion Quiz</h2>
+            </div>
+            {this.state.result ? this.renderResult() : this.renderQuiz()}
           </div>
-          {this.state.result ? this.renderResult() : this.renderQuiz()}
         </div>
       );
     }

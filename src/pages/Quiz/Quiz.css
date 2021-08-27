@@ -20,7 +20,7 @@ code {
 body {
   margin: 0;
   padding: 0;
-  background: #eee;
+  background: white;
   font-family: sans-serif;
 }
 
@@ -68,7 +68,7 @@ body {
 }
 
 .answerOption:hover {
-  background-color: #eefbfe;
+  background-color: #9DDBCC;
 }
 
 .radioCustomButton {
@@ -117,9 +117,9 @@ body {
 
 .radioCustomButton:checked ~ .radioCustomLabel:before {
   content: '';
-  background: #8bc53f no-repeat;
+  background: #93C9E7 no-repeat;
   background-size: 27px;
-  border-color: #8bc53f;
+  border-color: #93C9E7;
 }
 
 /* Animation */
@@ -152,4 +152,31 @@ body {
 .fade-appear.fade-appear-active {
   opacity: 1;
   transition: opacity 0.5s ease-in-out;
+}
+
+.QuizContainer {
+  padding: 50px;
+}
+
+.Quiz {
+  border: 5px solid;
+  border-color: #588AA6;
+  border-radius: 25px;
+  background: #588AA6;
+}
+
+.Quiz-header {
+  display: flex;
+  justify-content: center;
+  background: #9DDBCC;
+  font-size: 20px;
+  border-radius: 25px 25px 0px 0px;
+}
+
+.Quiz-header-2 {
+  display: flex;
+  justify-content: center;
+  background: #9DDBCC;
+  font-size: 20px;
+  border-radius: 0px 0px 25px 25px;
 }
