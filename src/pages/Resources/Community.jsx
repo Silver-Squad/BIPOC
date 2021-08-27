@@ -40,7 +40,7 @@ export default function Community (props) {
       // header container
       <div>
         <div className="flex items-center justify-center">
-          <div className="mt-8 ml-6">
+          <div className="m-8">
             <h2 className="m-6 text-6xl text-black font-bold flex items-center justify-center">Sites</h2>
               <div className="bg-askfor border-none leading-4 box-border h-15 w-275 p-4 ml-20 mr-20 rounded-lg min-w-min">
                 <div className="bg-askfor border-none leading-4 box-border h-15 w-275 p-10 ml-10 mr-10 rounded-lg min-w-min">
@@ -56,9 +56,11 @@ export default function Community (props) {
         </div>
 
         <div className="flex items-center justify-center">
-          <div className="mt-8 ml-6">
+          <div className="m-8">
             <h2 className="m-6 text-6xl text-black font-bold flex items-center justify-center">Videos</h2>
             <div>
+
+            {/* <div className="grid grid-cols-2 gap-4"> */}
 
               <div className="App">
                 <h1 className="p-2 font-bold">How to Support BIPOC People in Tech</h1>
@@ -80,7 +82,21 @@ export default function Community (props) {
                 <YoutubeEmbed embedId="DLpyJGDE22k" />
               </div>
 
+            {/* </div> */}
             </div>
+          </div>
+        </div>
+
+        <div className="flex items-center justify-center">
+          <div className="m-8">
+            <h2 className="m-6 text-6xl text-black font-bold flex items-center justify-center">Comments</h2>
+              <div className="bg-askfor border-none leading-4 box-border h-15 w-275 p-4 ml-20 mr-20 rounded-lg min-w-min">
+                <div className="bg-askfor border-none leading-4 box-border h-15 w-275 p-10 ml-10 mr-10 rounded-lg min-w-min">
+                  <div>
+                    Coming Soon!
+                  </div>
+                </div>
+              </div>
 
           </div>
         </div>
