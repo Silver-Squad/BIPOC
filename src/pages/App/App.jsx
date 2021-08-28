@@ -9,6 +9,8 @@ import HowItWorks from "../HowItWorks/HowItWorks";
 import Resources from "../Resources/Resources";
 import authService from "../../services/authService";
 import Profile from "../../pages/Profile/Profile"
+import Account from "../../pages/Account/Account"
+
 
 import "./App.css";
 
@@ -45,6 +47,16 @@ function App (props) {
           path='/profile' 
           render={({history}) => (
             <Profile 
+            history={history}
+            currentUser={user} 
+            />
+          )}
+        />
+        <Route 
+          exact
+          path='/account' 
+          render={({history}) => (
+            <Account
             history={history}
             currentUser={user} 
             />
