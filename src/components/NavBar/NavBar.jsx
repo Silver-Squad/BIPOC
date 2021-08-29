@@ -5,9 +5,9 @@ import { Link, useHistory } from "react-router-dom";
 import './NavBar.css';
 
 const navigation = [
-  { name: 'How it Works', href: '/howitworks', current: false, loggedIn: [false]},
-  { name: 'Resources', href: '/resources', current: false, loggedIn: [false]},
-  { name: 'About', href: '/about', current: false, loggedIn: [false] },
+  { name: 'How it Works', href: '/howitworks', current: false, loggedIn: [true, false]},
+  { name: 'Resources', href: '/resources', current: false, loggedIn: [true, false]},
+  { name: 'About', href: '/about', current: false, loggedIn: [true, false] },
   { name: 'Take the D&I Test', href: '/dnitest', current: false, loggedIn: [true] },
   { name: 'Sign Up', href: '/signup', current: false, loggedIn: [false] },  
 ]
