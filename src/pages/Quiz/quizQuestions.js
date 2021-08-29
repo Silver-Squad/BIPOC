@@ -1,87 +1,91 @@
 var quizQuestions = [
   {
-      question: "Question 1",
+      question: "Do you have blind resumes?",
       answers: [
           {
-              type: "Type 1",
-              content: "A"
+              type: 20,
+              content: "Yes"
           },
           {
-              type: "Type 2",
-              content: "B"
-          },
-          {
-              type: "Type 3",
-              content: "C"
+              type: 0,
+              content: "No"
           }
       ]
   },
   {
-    question: "Question 2",
+    question: "Do you have minorities in leadership?",
     answers: [
         {
-            type: "Type 1",
-            content: "A"
+            type: 20,
+            content: "Yes"
         },
         {
-            type: "Type 2",
-            content: "B"
+            type: 0,
+            content: "No"
+        },
+    ]
+  },
+  {
+    question: "What percentage of your employees are minorities?",
+    answers: [
+        {
+            type: 0,
+            content: "0%"
         },
         {
-            type: "Type 3",
-            content: "C"
+            type: 5,
+            content: "1-25%"
+        },
+        {
+            type: 10,
+            content: "26-50%"
+        },
+        {
+            type: 15,
+            content: "51-75%"
+        },
+        {
+            type: 20,
+            content: "76-100%"
         }
     ]
   },
   {
-    question: "Question 3",
+    question: "What percentage of your leadership team are minorities?",
     answers: [
         {
-            type: "Type 1",
-            content: "A"
+            type: 0,
+            content: "0%"
         },
         {
-            type: "Type 2",
-            content: "B"
+            type: 5,
+            content: "1-25%"
         },
         {
-            type: "Type 3",
-            content: "C"
+            type: 10,
+            content: "26-50%"
+        },
+        {
+            type: 15,
+            content: "51-75%"
+        },
+        {
+            type: 20,
+            content: "76-100%"
         }
     ]
   },
   {
-    question: "Question 4",
+    question: "Are you open to hiring a Diversity Consultant?",
     answers: [
         {
-            type: "Type 1",
-            content: "A"
+            type: 20,
+            content: "Yes"
         },
         {
-            type: "Type 2",
-            content: "B"
+            type: 0,
+            content: "No"
         },
-        {
-            type: "Type 3",
-            content: "C"
-        }
-    ]
-  },
-  {
-    question: "Question 5",
-    answers: [
-        {
-            type: "Type 1",
-            content: "A"
-        },
-        {
-            type: "Type 2",
-            content: "B"
-        },
-        {
-            type: "Type 3",
-            content: "C"
-        }
     ]
   }
 ];

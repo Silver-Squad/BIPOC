@@ -18,7 +18,8 @@ class Test extends Component {
       answerOptions: [],
       answer: '',
       answersCount: {},
-      result: ''
+      result: '',
+      answerArray: [],
     };
 
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
@@ -26,7 +27,7 @@ class Test extends Component {
 
   componentDidMount() {
     const shuffledAnswerOptions = quizQuestions.map(question =>
-      this.shuffleArray(question.answers)
+      (question.answers)
     );
     this.setState({
       question: quizQuestions[0].question,
@@ -34,25 +35,30 @@ class Test extends Component {
     });
   }
 
-    shuffleArray(array) {
-      var currentIndex = array.length,
-        temporaryValue,
-        randomIndex;
+    // Shuffle is not being used at this time:
 
-      // While there remain elements to shuffle...
-      while (0 !== currentIndex) {
-        // Pick a remaining element...
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
+    // for above componentDidMount:
+    // this.shuffleArray(question.answers)
 
-        // And swap it with the current element.
-        temporaryValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temporaryValue;
-      }
-
-      return array;
-    }
+    // shuffleArray(array) {
+    //   var currentIndex = array.length,
+    //     temporaryValue,
+    //     randomIndex;
+    //
+    //   // While there remain elements to shuffle...
+    //   while (0 !== currentIndex) {
+    //     // Pick a remaining element...
+    //     randomIndex = Math.floor(Math.random() * currentIndex);
+    //     currentIndex -= 1;
+    //
+    //     // And swap it with the current element.
+    //     temporaryValue = array[currentIndex];
+    //     array[currentIndex] = array[randomIndex];
+    //     array[randomIndex] = temporaryValue;
+    //   }
+    //
+    //   return array;
+    // }
 
     setUserAnswer(answer) {
       this.setState((state, props) => ({
@@ -65,6 +71,11 @@ class Test extends Component {
     }
 
     handleAnswerSelected(event) {
+      // console.log(event.currentTarget.value)
+      const answerArray = this.state.answerArray
+      answerArray.push(event.currentTarget.value)
+      // console.log(answerArray)
+
       this.setUserAnswer(event.currentTarget.value);
 
       if (this.state.questionId < quizQuestions.length) {
@@ -96,6 +107,11 @@ class Test extends Component {
       return answersCountKeys.filter(key => answersCount[key] === maxAnswerCount);
     }
 
+    scoreTest(answer, questions) {
+    var score = (answer/questions) * 100;
+    return score;
+    }
+
     setResults(result) {
       if (result.length === 1) {
         this.setState({ result: result[0] });
@@ -103,6 +119,10 @@ class Test extends Component {
         this.setState({ result: 'Undetermined' });
       }
     }
+
+    // setResults(result, answersCountKeys) {
+    //   this.setState({result: answersCountKeys})
+    // }
 
     renderQuiz() {
       return (
@@ -118,7 +138,15 @@ class Test extends Component {
     }
 
     renderResult() {
-      return <Result quizResult={this.state.result} />;
+      console.log(this.state.answerArray)
+      // convert array of strings to numbers
+      let newArray = this.state.answerArray.map(Number)
+      console.log(newArray)
+      // reduce array to one number that is a sum of all numbers in array
+      const reducer = (accumulator, curr) => accumulator + curr
+      let scoreTotal = newArray.reduce(reducer)
+      console.log(scoreTotal)
+      return <Result quizResult={scoreTotal + "%"}/>;
     }
 
     render() {
