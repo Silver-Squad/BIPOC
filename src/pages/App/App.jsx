@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Route, Redirect, useHistory } from "react-router-dom";
+import React, { Component } from "react";
+import { Route, Redirect} from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
 import Footer from "../../components/Footer/Footer";
 import Signup from "../Signup/Signup";
@@ -7,6 +7,7 @@ import Login from "../Login/Login";
 import HomePage from "../HomePage/HomePage";
 import HowItWorks from "../HowItWorks/HowItWorks";
 import authService from "../../services/authService";
+import * as profileService from '../../services/profileService'
 import Profile from "../../pages/Profile/Profile"
 import Account from "../../pages/Account/Account"
 import Resources from "../Resources/Resources";
@@ -17,33 +18,46 @@ import Education from "../Resources/Education";
 import Events from "../Resources/Events";
 import GetHired from "../Resources/GetHired";
 import Test from "../Quiz/Test"
-
 import "./App.css";
 
-function App (props) {
-  const [user, setUser] = useState(authService.getUser())
-  const history = useHistory();
-
-  const handleLogout = () => {
-    authService.logout();
-    setUser(null);
-    history.push("/");
+class App extends Component {
+  state = {
+    profiles: [],
+    user: authService.getUser(),
   };
 
-  const handleSignupOrLogin = () => {
-    setUser(authService.getUser());
+  handleLogout = () => {
+    authService.logout();
+    this.setState({ user: null });
+    this.props.history.push("/");
+  };
+
+  handleSignupOrLogin = () => {
+    this.setState({ user: authService.getUser() });
   }
+
+  handleAddProfiles = async newProfileData => {
+    const newProfile = await profileService.create(newProfileData);
+    newProfile.addedBy = { name: this.state.user.name, _id: this.state.user._id }
+    this.setState(state => ({
+      profiles: [...state.profiles, newProfile]
+    }), () => this.props.history.push('/profile'));
+  }
+
+  render () {
+    const {user} = this.state;
 
     return (
       <>
-        <NavBar user={user} handleLogout={handleLogout}/>
+        <NavBar user={user} handleLogout={this.handleLogout}/>
 
         <Route
           exact
           path="/"
-          render={() => (
+          render={({history}) => (
             <HomePage
               history={history}
+              handleSignupOrLogin={this.handleSignupOrLogin}
             />
           )}
         />
@@ -60,35 +74,22 @@ function App (props) {
           )}
         />
 
-        <Route 
-          exact
-          path='/account' 
-          render={({history}) => (
+        <Route exact path='/account' render={() => 
+          authService.getUser() ?
             <Account
-            history={history}
-            currentUser={user} 
+              handleAddProfiles={this.handleAddProfiles}
+              user={user} 
             />
-          )}
-        />
-
-        <Route
-          exact
-          path="/homepage"
-          render={({ history }) => (
-            <HomePage
-              history={history}
-              handleSignupOrLogin={handleSignupOrLogin}
-            />
-          )}
-        />
+            :
+            <Redirect to='/login' />
+        } />
 
         <Route
           exact
           path="/howitworks"
           render={({ history }) => (
             <HowItWorks
-              history={history}
-              handleSignupOrLogin={handleSignupOrLogin}
+              history={history} 
             />
           )}
         />
@@ -99,7 +100,7 @@ function App (props) {
           render={({ history }) => (
             <Resources
               history={history}
-              handleSignupOrLogin={handleSignupOrLogin}
+              handleSignupOrLogin={this.handleSignupOrLogin}
             />
           )}
         />
@@ -110,7 +111,7 @@ function App (props) {
           render={({ history }) => (
             <Research
               history={history}
-              handleSignupOrLogin={handleSignupOrLogin}
+              handleSignupOrLogin={this.handleSignupOrLogin}
             />
           )}
         />
@@ -121,7 +122,7 @@ function App (props) {
           render={({ history }) => (
             <Acceleration
               history={history}
-              handleSignupOrLogin={handleSignupOrLogin}
+              handleSignupOrLogin={this.handleSignupOrLogin}
             />
           )}
         />
@@ -132,7 +133,7 @@ function App (props) {
           render={({ history }) => (
             <Community
               history={history}
-              handleSignupOrLogin={handleSignupOrLogin}
+              handleSignupOrLogin={this.handleSignupOrLogin}
             />
           )}
         />
@@ -143,7 +144,7 @@ function App (props) {
           render={({ history }) => (
             <Education
               history={history}
-              handleSignupOrLogin={handleSignupOrLogin}
+              handleSignupOrLogin={this.handleSignupOrLogin}
             />
           )}
         />
@@ -154,7 +155,7 @@ function App (props) {
           render={({ history }) => (
             <Events
               history={history}
-              handleSignupOrLogin={handleSignupOrLogin}
+              handleSignupOrLogin={this.handleSignupOrLogin}
             />
           )}
         />
@@ -165,7 +166,7 @@ function App (props) {
           render={({ history }) => (
             <GetHired
               history={history}
-              handleSignupOrLogin={handleSignupOrLogin}
+              handleSignupOrLogin={this.handleSignupOrLogin}
             />
           )}
         />
@@ -175,8 +176,7 @@ function App (props) {
           path="/test"
           render={({ counter }) => (
             <Test
-              history={history}
-              handleSignupOrLogin={handleSignupOrLogin}
+              handleSignupOrLogin={this.handleSignupOrLogin}
             />
           )}
         />
@@ -187,7 +187,7 @@ function App (props) {
           render={({ history }) => (
             <Signup
               history={history}
-              handleSignupOrLogin={handleSignupOrLogin}
+              handleSignupOrLogin={this.handleSignupOrLogin}
             />
           )}
         />
@@ -198,7 +198,7 @@ function App (props) {
           render={({ history }) => (
             <Login
               history={history}
-              handleSignupOrLogin={handleSignupOrLogin}
+              handleSignupOrLogin={this.handleSignupOrLogin}
             />
           )}
         />
@@ -206,5 +206,6 @@ function App (props) {
       </>
     );
   }
+}
 
 export default App;

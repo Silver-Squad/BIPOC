@@ -2,25 +2,12 @@ import './Profile.css';
 import React from 'react';
 import SearchBar from '../../components/SearchBar/SearchBar'
 
-const tabs = [
-  { name: 'Overview', href: '#overview', current: true,},
-  { name: 'Initiatives', href: '#initiatives', current: false,},
-  { name: 'Demographics', href: '#demographics', current: false,},
-  { name: 'Detailed Score', href: '#score', current: false,},
-  // { name: 'Inclusion Index', href: '#inclusionindex', current: false,},
-]
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
-
 export default function Profile(props) {
 
     return (
       <main>
         {/* <SearchBar search={search} setSearch={setSearch}/> */}
         <SearchBar />
-
 
         {/* top card */}
         <div className="w-5/6 mx-auto flex">
@@ -36,7 +23,7 @@ export default function Profile(props) {
             className=""
             /> 
             {/* {company information} */}
-            <div classname="">
+            <div className="">
               <h1>Company Name</h1>
               <ul>
                 <li>San Francisco, USA</li>
@@ -116,21 +103,21 @@ export default function Profile(props) {
           <div className="tabs bg-current h-16 px-4 pt-3 pb-0 sm:px-6">
             
             <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-              <ul class="nav nav-tabs mx-auto px-30" id="myTab" role="tablist">
-                <li class="nav-item" role="presentation">
-                  <a class="nav-link active" id="overview-tab" data-bs-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="true">Overview</a>
+              <ul className="nav nav-tabs mx-auto px-30" id="myTab" role="tablist">
+                <li className="nav-item" role="presentation">
+                  <a className="nav-link active" id="overview-tab" data-bs-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="true">Overview</a>
                 </li>
-                <li class="nav-item" role="presentation">
-                  <a class="nav-link" id="initiatives-tab" data-bs-toggle="tab" href="#initiatives" role="tab" aria-controls="initiatives" aria-selected="false">Initiatives</a>
+                <li className="nav-item" role="presentation">
+                  <a className="nav-link" id="initiatives-tab" data-bs-toggle="tab" href="#initiatives" role="tab" aria-controls="initiatives" aria-selected="false">Initiatives</a>
                 </li>
-                <li class="nav-item" role="presentation">
-                  <a class="nav-link" id="demographics-tab" data-bs-toggle="tab" href="#demographics" role="tab" aria-controls="demographics" aria-selected="false">Demographics</a>
+                <li className="nav-item" role="presentation">
+                  <a className="nav-link" id="demographics-tab" data-bs-toggle="tab" href="#demographics" role="tab" aria-controls="demographics" aria-selected="false">Demographics</a>
                 </li>
-                <li class="nav-item" role="presentation">
-                  <a class="nav-link" id="score-tab" data-bs-toggle="tab" href="#score" role="tab" aria-controls="score" aria-selected="false">Detailed Score</a>
+                <li className="nav-item" role="presentation">
+                  <a className="nav-link" id="score-tab" data-bs-toggle="tab" href="#score" role="tab" aria-controls="score" aria-selected="false">Detailed Score</a>
                 </li>
-                {/* <li class="nav-item" role="presentation">
-                  <a class="nav-link" id="inclusion-tab" data-bs-toggle="tab" href="#inclusion" role="tab" aria-controls="inclusion" aria-selected="false">Inclusion Index</a>
+                {/* <li className="nav-item" role="presentation">
+                  <a className="nav-link" id="inclusion-tab" data-bs-toggle="tab" href="#inclusion" role="tab" aria-controls="inclusion" aria-selected="false">Inclusion Index</a>
                 </li> */}
               </ul>
             </div>
@@ -140,26 +127,24 @@ export default function Profile(props) {
 
           <div className="bg-gray-300 h-96 px-4 py-5 sm:p-6">
             <div className="bg-white w-7/8 mx-auto">
-              <div class="tab-content" id="myTabContent">
+              <div className="tab-content" id="myTabContent">
 
-                <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">Overview</div>
+                <div className="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">Overview</div>
 
-                <div class="tab-pane fade" id="initiatives" role="tabpanel" aria-labelledby="initiatives-tab">Initiatives</div>
+                <div className="tab-pane fade" id="initiatives" role="tabpanel" aria-labelledby="initiatives-tab">Initiatives</div>
 
-                <div class="tab-pane fade" id="demographics" role="tabpanel" aria-labelledby="demographics-tab">Demographics</div>
+                <div className="tab-pane fade" id="demographics" role="tabpanel" aria-labelledby="demographics-tab">Demographics</div>
 
-                <div class="tab-pane fade" id="score" role="tabpanel" aria-labelledby="score-tab">Detailed Score</div>
+                <div className="tab-pane fade" id="score" role="tabpanel" aria-labelledby="score-tab">Detailed Score</div>
                 
                 {/* Inclusion index to be included in future version  */}
-                {/* <div class="tab-pane fade" id="inclusion" role="tabpanel" aria-labelledby="inclusion-tab">Inclusion Index</div> */}
+                {/* <div className="tab-pane fade" id="inclusion" role="tabpanel" aria-labelledby="inclusion-tab">Inclusion Index</div> */}
               </div>
             </div>  
           </div>
         </div>
       </main>
     )
-
-
 }
 
 

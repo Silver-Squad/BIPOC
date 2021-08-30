@@ -20,7 +20,6 @@ export default function Login (props) {
   
   const handleSubmit = async (e) => {
     const { handleSignupOrLogin } = props;
-    console.log('handling submit')
     e.preventDefault();
     try {
       if(formValue.password !== formValue.passwordConf)

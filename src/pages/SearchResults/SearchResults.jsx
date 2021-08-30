@@ -2,7 +2,7 @@ import SearchBar from '../../components/SearchBar/SearchBar'
 import React, { useState, useEffect } from 'react';
 import { useForm } from '../../hooks/useForm'
 import { useLocation } from 'react-router-dom';
-import * as profileAPI from '../../services/profileService';
+import * as profileService from '../../services/profileService';
 
 
 
@@ -21,13 +21,13 @@ const SearchResults = props => {
         (async function() {
             let profiles = [];
             if (pathname === '/search/all' && !!currentUser === false) {
-                profiles = await profileAPI.getAllPublic();
+                profiles = await profileService.getAllPublic();
             } else if (pathname === '/search/all') {
-                const userPrivateprofiles = await profileAPI.getPrivateByCurrentUser(currentUser._id);
-                const allPublicprofiles = await profileAPI.getAllPublic();
+                const userPrivateprofiles = await profileService.getPrivateByCurrentUser(currentUser._id);
+                const allPublicprofiles = await profileService.getAllPublic();
                 profiles = userPrivateprofiles.concat(allPublicprofiles);
             } else if (pathname === '/search/mysnips') {
-                profiles = await profileAPI.getAllByCurrentUser(currentUser._id);
+                profiles = await profileService.getAllByCurrentUser(currentUser._id);
             }
             setAllprofiles(profiles);
         })();

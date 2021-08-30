@@ -7,8 +7,9 @@ function create(req, res) {
   // identify user creating the profile                           
   req.body.addedBy = req.user._id;                      
   Profile.create(req.body)                              
-    .then(profile => {res.json(profile)})               
+    .then(profile => {res.json(profile)})              
     .catch(err => {res.json(err)});
+    console.log(req.body,'hitting controller')
 }
 
 // return all profiles in the database

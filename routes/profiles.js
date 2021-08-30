@@ -2,7 +2,7 @@ const router = require('express').Router();
 const profilesCtrl = require('../controllers/profiles');
 
 /*---------- Public Routes ----------*/
-
+router.get('/', profilesCtrl.index);
 
 
 

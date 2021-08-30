@@ -1,7 +1,7 @@
 import { Fragment, useState, useEffect } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { LoginIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import './NavBar.css';
 
 const navigation = [

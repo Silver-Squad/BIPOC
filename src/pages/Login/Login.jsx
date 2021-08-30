@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import authService from "../../services/authService";
 import { useForm } from '../../hooks/useForm'
@@ -13,11 +13,6 @@ export default function Login (props) {
     password: "",
   });
 
-  // useEffect(() => {
-  //   formRef.current.checkValidity() ? setValidForm(false) : setValidForm(true);
-  //   updateMessage('');
-  // }, [formValue]);
-  
   const handleSubmit = async (e) => {
     const { handleSignupOrLogin } = props;
     console.log(loginValue.email, loginValue.password)

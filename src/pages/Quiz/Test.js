@@ -1,7 +1,4 @@
-import React, { Component, Fragment } from 'react';
-import PropTypes from 'prop-types';
-
-import Question from './Question';
+import React, { Component } from 'react';
 import Result from './Result'
 import quizQuestions from './quizQuestions'
 import Quiz from './Quiz'
