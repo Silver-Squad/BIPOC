@@ -1,13 +1,13 @@
 import { Fragment, useState, useEffect } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { LoginIcon, BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
+import { LoginIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 import { Link, useHistory } from "react-router-dom";
 import './NavBar.css';
 
 const navigation = [
-  { name: 'How it Works', href: '/howitworks', current: false, loggedIn: [false]},
-  { name: 'Resources', href: '/resources', current: false, loggedIn: [false]},
-  { name: 'About', href: '/about', current: false, loggedIn: [false] },
+  { name: 'How it Works', href: '/howitworks', current: false, loggedIn: [true, false]},
+  { name: 'Resources', href: '/resources', current: false, loggedIn: [true, false]},
+  { name: 'About', href: '/about', current: false, loggedIn: [true, false] },
   { name: 'Take the D&I Test', href: '/dnitest', current: false, loggedIn: [true] },
   { name: 'Sign Up', href: '/signup', current: false, loggedIn: [false] },
   { name: 'Homepage', href: '/homepage', current: false, loggedIn: [false] },
@@ -74,10 +74,7 @@ export default function NavBar(props) {
                 { loggedIn ?
 
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <button className="bg-white p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                  <span className="sr-only">View notifications</span>
-                  <BellIcon className="h-6 w-6" aria-hidden="true" />
-                </button>
+                
 
                 {/* Profile dropdown */}
                 <Menu as="div" className="ml-3 relative">
@@ -129,7 +126,7 @@ export default function NavBar(props) {
                                   'block px-4 py-2 text-sm text-gray-700'
                                 )}
                               >
-                                Settings
+                                Account
                               </a>
                             )}
                           </Menu.Item>

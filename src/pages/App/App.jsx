@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import { Route, Redirect, useHistory } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
+import Footer from "../../components/Footer/Footer";
 import Signup from "../Signup/Signup";
 import Login from "../Login/Login";
-
 import HomePage from "../HomePage/HomePage";
 import HowItWorks from "../HowItWorks/HowItWorks";
 import authService from "../../services/authService";
 import Profile from "../../pages/Profile/Profile"
+import Account from "../../pages/Account/Account"
+
 
 import Resources from "../Resources/Resources";
 import Research from "../Resources/Research";
@@ -43,7 +45,9 @@ function App (props) {
           exact
           path="/"
           render={() => (
-            <h1>hello</h1>
+            <HomePage
+              history={history}
+            />
           )}
         />
         {/* route for company profiles */}
@@ -54,6 +58,16 @@ function App (props) {
             <Profile
             history={history}
             currentUser={user}
+            />
+          )}
+        />
+        <Route 
+          exact
+          path='/account' 
+          render={({history}) => (
+            <Account
+            history={history}
+            currentUser={user} 
             />
           )}
         />
@@ -181,7 +195,7 @@ function App (props) {
             />
           )}
         />
-
+        <Footer />
       </>
     );
   }

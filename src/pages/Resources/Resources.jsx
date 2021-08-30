@@ -1,39 +1,8 @@
-import React, { useState, useRef, useEffect } from "react";
-import { Link, useHistory } from "react-router-dom";
-import authService from "../../services/authService";
-import { useForm } from '../../hooks/useForm'
+import "./Resources.css";
+import YoutubeEmbed from "./YoutubeEmbed";
 
-export default function HowItWorks (props) {
-  const history = useHistory();
-  const formRef = useRef();
-  const [message, updateMessage] = useState('')
-  const [formInvalid, setValidForm] = useState(true)
-  const [formValue, handleChange] = useForm({
-    email: "",
-    password: "",
-    passwordConf: "",
-  });
-
-  // useEffect(() => {
-  //   formRef.current.checkValidity() ? setValidForm(false) : setValidForm(true);
-  //   updateMessage('');
-  // }, [formValue]);
-
-  // const handleSubmit = async (e) => {
-  //   const { handleSignupOrLogin } = props;
-  //   console.log(formValue.email, formValue.password)
-  //   e.preventDefault();
-  //   try {
-  //     if(formValue.password !== formValue.passwordConf)
-  //       throw Error("Passwords must match")
-  //     await authService.signup(formValue);
-  //     handleSignupOrLogin()
-  //     history.push("/");
-  //   } catch (err) {
-  //     updateMessage(err.message);
-  //   }
-  // };
-
+export default function Resources (props) {
+  
     return (
       <div  className="ml-20 mr-20">
 
@@ -153,7 +122,6 @@ export default function HowItWorks (props) {
                 </div>
               </div>
             </div>
-
             <div>
               <div className="bg-none border-none box-border pb-7 pl-4 mt-5 flex justify-end">
                 <div className="font-extrabold text-6xl absolute mr-10">
@@ -172,7 +140,6 @@ export default function HowItWorks (props) {
 
           </div>
         </div>
-
       </div>
       </div>
     );

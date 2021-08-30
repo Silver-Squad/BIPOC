@@ -1,8 +1,7 @@
 const router = require('express').Router();
 
 /*---------- Public Routes ----------*/
-router.post('/signup', authCtrl.signup);
-router.post('/login', authCtrl.login)
+
 
 
 
