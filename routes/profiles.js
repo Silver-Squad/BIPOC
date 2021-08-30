@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const profilesCtrl = require('../controllers/profiles');
 
 /*---------- Public Routes ----------*/
 
@@ -6,7 +7,10 @@ const router = require('express').Router();
 
 
 /*---------- Protected Routes ----------*/
-
+router.use(require('../config/auth'));
+router.post('/', checkAuth, profilesCtrl.create);
+router.put('/:id', checkAuth, profilesCtrl.update);
+router.delete('/:id', checkAuth, profilesCtrl.delete);
 
 
 /*--- HELPER FUNCTIONS  ---*/

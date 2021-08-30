@@ -4,8 +4,6 @@ import { useHistory } from 'react-router-dom'
 import { useForm } from '../../hooks/useForm'
 import * as profileAPI from '../../services/profileService';
 
-
-
 export default function Account(props) {
 
   //  allow us history access for routing 
@@ -20,10 +18,12 @@ export default function Account(props) {
       street: "",  
       city: "",
       state: "",
-      zip:  0,
+      zip:  "",
       website: "",
       initiativeOne: "",
       initiativeTwo: "",
+      empRatio: "",
+      leadershipRatio: "",
   })
 
   // function to handle snippet create via api
@@ -32,9 +32,24 @@ export default function Account(props) {
     history.push('/profile')
   }
 
+  // hook to check form validity 
+  useEffect(() => {
+    formRef.current.checkValidity() ? setValidForm(false) : setValidForm(true);
+    }, [state]);
+
+  // pass form data via submit to handleAddSnippet func 
+  async function handleSubmit(e) {
+      e.preventDefault()
+      handleAddProfile(state)
+  }
+
   return (
+    
+
     <main className="w-5/6 mt-10 mx-auto">
-    <form className="space-y-8 divide-y divide-gray-200">
+      <form ref={formRef} 
+          onSubmit={handleSubmit}
+          className="space-y-8 divide-y divide-gray-200">
       <div>
           <div>
             <h3 className="text-lg leading-6 font-medium text-gray-900">Company Account Information</h3>
@@ -56,7 +71,9 @@ export default function Account(props) {
                   type="text"
                   name="first-name"
                   id="first-name"
-                  autoComplete="given-name"
+                  autoComplete="company-name"
+                  value={state.name}
+                  onChange={handleChange}
                   className="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md"
                 />
               </div>
@@ -73,6 +90,8 @@ export default function Account(props) {
                   name="street-address"
                   id="street-address"
                   autoComplete="street-address"
+                  value={state.address}
+                  onChange={handleChange}
                   className="block max-w-lg w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border-gray-300 rounded-md"
                 />
               </div>
@@ -87,6 +106,8 @@ export default function Account(props) {
                   type="text"
                   name="city"
                   id="city"
+                  value={state.city}
+                  onChange={handleChange}
                   className="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md"
                 />
               </div>
@@ -101,6 +122,8 @@ export default function Account(props) {
                   type="text"
                   name="state"
                   id="state"
+                  value={state.state}
+                  onChange={handleChange}
                   className="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md"
                 />
               </div>
@@ -115,6 +138,8 @@ export default function Account(props) {
                   type="text"
                   name="zip"
                   id="zip"
+                  value={state.zip}
+                  onChange={handleChange}
                   autoComplete="postal-code"
                   className="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md"
                 />
@@ -137,9 +162,11 @@ export default function Account(props) {
               </label>
               <div className="mt-1 sm:mt-0 sm:col-span-2">
                 <textarea
-                  id="about"
-                  name="about"
+                  id="intone"
+                  name="intone"
                   rows={3}
+                  value={state.initiativeOne}
+                  onChange={handleChange}
                   className="max-w-lg shadow-sm block w-full focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border border-gray-300 rounded-md"
                   defaultValue={''}
                 />
@@ -153,9 +180,11 @@ export default function Account(props) {
               </label>
               <div className="mt-1 sm:mt-0 sm:col-span-2">
                 <textarea
-                  id="about"
-                  name="about"
+                  id="inttwo"
+                  name="inttwo"
                   rows={3}
+                  value={state.initiativeTwo}
+                  onChange={handleChange}
                   className="max-w-lg shadow-sm block w-full focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border border-gray-300 rounded-md"
                   defaultValue={''}
                 />
@@ -175,9 +204,10 @@ export default function Account(props) {
               </label>
               <div className="mt-1 sm:mt-0 sm:col-span-2">
                 <select
-                  id="country"
-                  name="country"
-                  autoComplete="country"
+                  id="empratio"
+                  name="empratio"
+                  value={state.empRatio}
+                  onChange={handleChange}
                   className="max-w-lg block focus:ring-indigo-500 focus:border-indigo-500 w-full shadow-sm sm:max-w-xs sm:text-sm border-gray-300 rounded-md"
                 >
                   <option>0-5%</option>
@@ -194,9 +224,10 @@ export default function Account(props) {
               </label>
               <div className="mt-1 sm:mt-0 sm:col-span-2">
                 <select
-                  id="country"
-                  name="country"
-                  autoComplete="country"
+                  id="leaderratio"
+                  name="leaderratio"
+                  value={state.leadershipRatio}
+                  onChange={handleChange}
                   className="max-w-lg block focus:ring-indigo-500 focus:border-indigo-500 w-full shadow-sm sm:max-w-xs sm:text-sm border-gray-300 rounded-md"
                 >
                   <option>0-5%</option>
