@@ -9,7 +9,8 @@ const navigation = [
   { name: 'Resources', href: '/resources', current: false, loggedIn: [true, false]},
   { name: 'About', href: '/about', current: false, loggedIn: [true, false] },
   { name: 'Take the D&I Test', href: '/dnitest', current: false, loggedIn: [true] },
-  { name: 'Sign Up', href: '/signup', current: false, loggedIn: [false] },  
+  { name: 'Sign Up', href: '/signup', current: false, loggedIn: [false] },
+  { name: 'Homepage', href: '/homepage', current: false, loggedIn: [false] },
 ]
 
 
@@ -71,7 +72,7 @@ export default function NavBar(props) {
               </div>
 
                 { loggedIn ?
-                  
+
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 
 

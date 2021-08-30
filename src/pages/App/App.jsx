@@ -6,11 +6,20 @@ import Signup from "../Signup/Signup";
 import Login from "../Login/Login";
 import HomePage from "../HomePage/HomePage";
 import HowItWorks from "../HowItWorks/HowItWorks";
-import Resources from "../Resources/Resources";
 import authService from "../../services/authService";
 import Profile from "../../pages/Profile/Profile"
 import Account from "../../pages/Account/Account"
 
+
+import Resources from "../Resources/Resources";
+import Research from "../Resources/Research";
+import Acceleration from "../Resources/Acceleration";
+import Community from "../Resources/Community";
+import Education from "../Resources/Education";
+import Events from "../Resources/Events";
+import GetHired from "../Resources/GetHired";
+
+import Test from "../Quiz/Test"
 
 import "./App.css";
 
@@ -42,13 +51,13 @@ function App (props) {
           )}
         />
         {/* route for company profiles */}
-        <Route 
+        <Route
           exact
-          path='/profile' 
+          path='/profile'
           render={({history}) => (
-            <Profile 
+            <Profile
             history={history}
-            currentUser={user} 
+            currentUser={user}
             />
           )}
         />
@@ -89,6 +98,78 @@ function App (props) {
           path="/resources"
           render={({ history }) => (
             <Resources
+              history={history}
+              handleSignupOrLogin={handleSignupOrLogin}
+            />
+          )}
+        />
+
+        <Route
+          exact
+          path="/resources/research"
+          render={({ history }) => (
+            <Research
+              history={history}
+              handleSignupOrLogin={handleSignupOrLogin}
+            />
+          )}
+        />
+        <Route
+          exact
+          path="/resources/acceleration"
+          render={({ history }) => (
+            <Acceleration
+              history={history}
+              handleSignupOrLogin={handleSignupOrLogin}
+            />
+          )}
+        />
+        <Route
+          exact
+          path="/resources/community"
+          render={({ history }) => (
+            <Community
+              history={history}
+              handleSignupOrLogin={handleSignupOrLogin}
+            />
+          )}
+        />
+        <Route
+          exact
+          path="/resources/education"
+          render={({ history }) => (
+            <Education
+              history={history}
+              handleSignupOrLogin={handleSignupOrLogin}
+            />
+          )}
+        />
+        <Route
+          exact
+          path="/resources/events"
+          render={({ history }) => (
+            <Events
+              history={history}
+              handleSignupOrLogin={handleSignupOrLogin}
+            />
+          )}
+        />
+        <Route
+          exact
+          path="/resources/gethired"
+          render={({ history }) => (
+            <GetHired
+              history={history}
+              handleSignupOrLogin={handleSignupOrLogin}
+            />
+          )}
+        />
+
+        <Route
+          exact
+          path="/test"
+          render={({ counter }) => (
+            <Test
               history={history}
               handleSignupOrLogin={handleSignupOrLogin}
             />

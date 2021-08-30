@@ -2,11 +2,8 @@
 export default function HowItWorks () {
 
     return (
-      <>
-
-      {/* header container */}
-
-      <div>
+      // header container
+      <div className="ml-20 mr-20">
         <div className="flex items-center justify-center">
           <div className="grid grid-cols-2 gap-4">
               <div className="mt-8 ml-6">
@@ -27,8 +24,8 @@ export default function HowItWorks () {
         </div>
 
       <div>
-        <div className="bg-askfor border-none leading-4 box-border h-15 w-275 p-4 mt-10 ml-60 mr-60 rounded-lg min-w-min">
-          <div className="bg-askfor border-none leading-4 box-border h-15 w-275 p-10 ml-10 mr-10 rounded-lg min-w-min">
+        <div className="bg-askfor border-none leading-4 box-border h-15 w-275 p-4 mt-10 ml-40 mr-40 rounded-lg min-w-min">
+          <div className="bg-askfor border-none leading-4 box-border h-15 w-275 p-10 rounded-lg min-w-min">
             <div className="mb-4">
             What we ask for:
             </div>
@@ -49,12 +46,13 @@ export default function HowItWorks () {
 
         <div className="flex items-center justify-center">
           <div className="grid grid-cols-2 gap-4">
-            <div className="mt-0">
-              <img width="300"
-              src="/images/undraw-focus.png"
-              alt='team-spirit'
-              />
-            </div>  
+
+          <div>
+            <img width="300"
+            src="/images/undraw-focus.png"
+            alt='team-spirit'
+            />
+            </div>
 
             <div>
               <div className="bg-none border-none box-border pb-7 pl-4 mt-5">
@@ -83,64 +81,64 @@ export default function HowItWorks () {
               </div>
             </div>
 
-            <div className="mt-0 ml-40 pr-10">
+            <div className="flex justify-end">
               <img width="300"
               src="/images/undraw-data.png"
               alt='team-spirit'
               />
+            </div>
+
+            <div>
+              <img width="300"
+              src="/images/undraw-authentic.png"
+              alt='team-spirit'
+              />
+            </div>
+
+            <div>
+              <div className="bg-none border-none box-border pb-7 pl-4 mt-5">
+                <div className="font-extrabold text-6xl mt-0 absolute">
+                3
+                </div>
               </div>
 
-              <div className="mt-0">
-                <img width="300"
-                src="/images/undraw-authentic.png"
-                alt='team-spirit'
-                />
-                </div>
-
-                <div>
-                  <div className="bg-none border-none box-border pb-7 pl-4 mt-5">
-                    <div className="font-extrabold text-6xl mt-0 absolute">
-                    3
-                    </div>
-                  </div>
-
-                  <div className="bg-firstbox border-none leading-4 box-border h-130 w-275 p-4 rounded-lg min-w-min mr-10">
-                    <div className="ml-8 p-4">
-                    Set up your company account and verify the claim on the company
-                    </div>
-                  </div>
-                </div>
-
-                <div>
-                  <div className="bg-none border-none box-border pb-7 pl-4 mt-5">
-                    <div className="font-extrabold text-6xl mt-0 absolute">
-                    4
-                    </div>
-                  </div>
-                  <div className="bg-altbox border-none leading-4 box-border h-130 w-275 p-4 rounded-lg min-w-min mr-4">
-                    <div className="ml-10 p-4">
-                    Receive your score and overall report via e-mail and listed on your profile
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-0 ml-40 pr-10">
-                  <img width="300"
-                  src="/images/undraw-filing.png"
-                  alt='team-spirit'
-                  />
-                  </div>
-
-          </div>
-
-          <div className="p-10 pt-6 pb-8">
-              <div className="p-4 flex items-center justify-center">
-                <button className="bg-test text-white rounded-full w-5/12 p-2 hover:bg-homepage focus:outline-none flex items-center justify-center font-extrabold">
-                  Begin Test
-                </button>
+              <div className="bg-firstbox border-none leading-4 box-border h-130 w-275 p-4 rounded-lg min-w-min mr-10">
+                <div className="ml-8 p-4">
+                Set up your company account and verify the claim on the company
               </div>
+            </div>
           </div>
-        </div>      
+
+            <div>
+              <div className="bg-none border-none box-border pb-7 pl-4 mt-5">
+                <div className="font-extrabold text-6xl mt-0 absolute">
+                4
+                </div>
+              </div>
+              <div className="bg-altbox border-none leading-4 box-border h-130 w-275 p-4 rounded-lg min-w-min mr-4">
+                <div className="ml-10 p-4">
+                Receive your score and overall report via e-mail and listed on your profile
+                </div>
+              </div>
+            </div>
+
+            <div className="flex justify-end">
+              <img width="300"
+              src="/images/undraw-filing.png"
+              alt='team-spirit'
+              />
+              </div>
+
+          </div>
+        <div className="p-10 pt-6 pb-8">
+            <div className="p-4 flex items-center justify-center">
+              <button className="bg-test text-white rounded-full w-5/12 p-2 hover:bg-homepage focus:outline-none flex items-center justify-center font-extrabold">
+              <a rel="noopener noreferrer" href="/test">
+              Begin Test</a>
+              </button>
+            </div>
+        </div>
+      </div>
       </div>
      </div>
     </div>
