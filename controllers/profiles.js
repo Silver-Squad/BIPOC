@@ -20,13 +20,6 @@ function index(req, res) {
     .catch(err => {res.json(err)})
 }
 
-function getAllPublicProfiles (req, res) {
-  Profile.find({isPrivate: false})
-    .populate('addedBy')
-    .then(profiles => res.json(profiles))
-    .catch(err => {res.json(err)})
-}
-
 // return all profiles created by the current user
 function indexCurrentUser(req, res) {                   
   Profile.find({addedBy: req.params.userid})
@@ -35,8 +28,8 @@ function indexCurrentUser(req, res) {
     .catch(err => {res.json(err)})
 }
 
- // return one profile by document id
-function getOneSnip(req, res) {                        
+// return one profile by document id
+function getOneAccount(req, res) {                        
   Profile.findById(req.params.id)
     .then(profile => res.json(profile))
     .catch(err => res.json(err))
@@ -57,9 +50,8 @@ function deleteOne(req, res) {
 module.exports = {
   create,                                                                       
   index,
-  getAllPublicProfiles, 
   indexCurrentUser,
-  getOneSnip,     
+  getOneAccount,     
   update,                                                                      
   delete: deleteOne                                                                     
 }

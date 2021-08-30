@@ -1,48 +1,42 @@
-import "./Account.css";
-import React, { useState, useEffect, useRef } from "react";
-import { useHistory } from "react-router-dom";
-import { useForm } from "../../hooks/useForm";
+import React, { useState, useEffect, useRef  } from 'react';
+import { useHistory, useLocation } from 'react-router-dom';
+import { useForm } from '../../hooks/useForm';
 import * as profileService from "../../services/profileService";
 
-export default function Account(props) {
-  //  allow us history access for routing
+export default function AccountEdit(props){
+  const location = useLocation();
+  //  allow us history access for routing 
   const history = useHistory();
   // initialize form as invalid
   const [formInvalid, setValidForm] = useState(true);
   // initialize object for form validation
   const formRef = useRef();
   //  custom hook to initialize state
-  const [state, handleChange] = useForm({
-    name: "",
-    street: "",
-    city: "",
-    state: "",
-    zip: "",
-    website: "",
-    initiativeOne: "",
-    initiativeTwo: "",
-    empRatio: "",
-    leaderRatio: "",
-    score: "0",
-  });
+  const [state, setAccount] = useForm(location.state);
 
-  // function to handle profile create via api
-  async function handleAddProfile(newProfileData) {
-    await profileService.create(newProfileData);
-    history.push("/");
-  }
 
-  // hook to check form validity
+  // hook to check form validity 
   useEffect(() => {
-    formRef.current.checkValidity() ? setValidForm(false) : setValidForm(true);
-  }, [state]);
+      formRef.current.checkValidity() ? setValidForm(false) : setValidForm(true);
+      }, [state]);
 
-  // pass form data via submit to handleAddprofile func
+  // pass form data via submit to handleAddProfile func 
   async function handleSubmit(e) {
-    e.preventDefault();
-    handleAddProfile(state);
+      e.preventDefault();
+      await profileService.update(state)
+      history.push('/')
   }
 
+  // const accountId = props.match.params.accountid;
+
+  useEffect(() => {
+    (async function() {
+        const account = await profileService.getOne(props.match.params.id);
+        setAccount(account);
+    })();
+}, []);
+
+  const deleteProfile = () => profileService.deleteOne(props.profile._id);
 
   return (
     <main className="w-5/6 mt-10 mx-auto">
@@ -78,7 +72,7 @@ export default function Account(props) {
                     id="name"
                     autoComplete="company-name"
                     value={state.name}
-                    onChange={handleChange}
+                    onChange={setAccount}
                     className="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md"
                   />
                 </div>
@@ -97,7 +91,7 @@ export default function Account(props) {
                     name="website"
                     id="website"
                     value={state.website}
-                    onChange={handleChange}
+                    onChange={setAccount}
                     className="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md"
                   />
                 </div>
@@ -117,7 +111,7 @@ export default function Account(props) {
                     id="street-address"
                     autoComplete="street-address"
                     value={state.address}
-                    onChange={handleChange}
+                    onChange={setAccount}
                     className="block max-w-lg w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border-gray-300 rounded-md"
                   />
                 </div>
@@ -136,7 +130,7 @@ export default function Account(props) {
                     name="city"
                     id="city"
                     value={state.city}
-                    onChange={handleChange}
+                    onChange={setAccount}
                     className="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md"
                   />
                 </div>
@@ -155,7 +149,7 @@ export default function Account(props) {
                     name="state"
                     id="state"
                     value={state.state}
-                    onChange={handleChange}
+                    onChange={setAccount}
                     className="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md"
                   />
                 </div>
@@ -174,7 +168,7 @@ export default function Account(props) {
                     name="zip"
                     id="zip"
                     value={state.zip}
-                    onChange={handleChange}
+                    onChange={setAccount}
                     autoComplete="postal-code"
                     className="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md"
                   />
@@ -203,11 +197,11 @@ export default function Account(props) {
           </label>
           <div className="mt-1 sm:mt-0 sm:col-span-2">
             <textarea
-              id="initiativeOne"
-              name="initiativeOne"
+              id="intone"
+              name="intone"
               rows={3}
               value={state.initiativeOne}
-              onChange={handleChange}
+              onChange={setAccount}
               className="max-w-lg shadow-sm block w-full focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border border-gray-300 rounded-md"
             />
           </div>
@@ -222,11 +216,11 @@ export default function Account(props) {
           </label>
           <div className="mt-1 sm:mt-0 sm:col-span-2">
             <textarea
-              id="initiativeTwo"
-              name="initiativeTwo"
+              id="inttwo"
+              name="inttwo"
               rows={3}
               value={state.initiativeTwo}
-              onChange={handleChange}
+              onChange={setAccount}
               className="max-w-lg shadow-sm block w-full focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border border-gray-300 rounded-md"
             />
           </div>
@@ -254,7 +248,7 @@ export default function Account(props) {
               id="empRatio"
               name="empRatio"
               value={state.empRatio}
-              onChange={handleChange}
+              onChange={setAccount}
               className="max-w-lg block focus:ring-indigo-500 focus:border-indigo-500 w-full shadow-sm sm:max-w-xs sm:text-sm border-gray-300 rounded-md"
             >
               <option value='0-5%'>0-5%</option>
@@ -277,7 +271,7 @@ export default function Account(props) {
               id="leaderRatio"
               name="leaderRatio"
               value={state.leaderRatio}
-              onChange={handleChange}
+              onChange={setAccount}
               className="max-w-lg block focus:ring-indigo-500 focus:border-indigo-500 w-full shadow-sm sm:max-w-xs sm:text-sm border-gray-300 rounded-md"
             >
               <option value='0-5%'>0-5%</option>
@@ -301,7 +295,7 @@ export default function Account(props) {
                     name="score"
                     id="score"
                     value={state.score}
-                    onChange={handleChange}
+                    onChange={setAccount}
                     className="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md"
                   />
                 </div>
@@ -323,8 +317,29 @@ export default function Account(props) {
               Save
             </button>
           </div>
+          <div className="justify-center mx-auto mb-10">
+            <div className=''>
+              <label
+                className="text-md font-medium text-gray-700 sm:mt-px sm:pt-2"
+              >
+                Delete Profile Permenantley
+              </label>
+            </div>
+            <div>
+              <button
+                type="submit"
+                disabled={formInvalid}
+                onClick={deleteProfile}
+                className="ml-3 justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              >
+                Delete
+              </button>
+            </div>
+          
+          </div>
         </div>
       </form>
     </main>
   );
 }
+

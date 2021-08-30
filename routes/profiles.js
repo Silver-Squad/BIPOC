@@ -3,7 +3,7 @@ const profilesCtrl = require('../controllers/profiles');
 
 /*---------- Public Routes ----------*/
 router.get('/', profilesCtrl.index);
-
+router.get('/:id', profilesCtrl.getOneAccount);
 
 
 /*---------- Protected Routes ----------*/

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import { Route, Redirect} from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
 import Footer from "../../components/Footer/Footer";
@@ -10,6 +10,7 @@ import authService from "../../services/authService";
 import * as profileService from '../../services/profileService'
 import Profile from "../../pages/Profile/Profile"
 import Account from "../../pages/Account/Account"
+import AccountEdit from "../../pages/AccountEdit/AccountEdit"
 import Resources from "../Resources/Resources";
 import Research from "../Resources/Research";
 import Acceleration from "../Resources/Acceleration";
@@ -44,8 +45,21 @@ class App extends Component {
     }), () => this.props.history.push('/profile'));
   }
 
+  handleUpdateProfile = async updatedProfileData => {
+    const updatedProfile = await profileService.update(updatedProfileData);
+    updatedProfile.addedBy = {name: this.state.user.name, _id: this.state.user._id}
+    const newProfilesArray = this.state.Profiles.map(m => 
+      m._id === updatedProfile._id ? updatedProfile : m
+    );
+    this.setState(
+      {profiles: newProfilesArray},
+      () => this.props.history.push('/')
+    );
+  }
+
+  
   render () {
-    const {user} = this.state;
+    const {user} = this.state
 
     return (
       <>
@@ -79,6 +93,18 @@ class App extends Component {
             <Account
               handleAddProfiles={this.handleAddProfiles}
               user={user} 
+            />
+            :
+            <Redirect to='/login' />
+        } />
+
+        <Route exact path='/account/edit/' render={({match, location}) => 
+          authService.getUser() ?
+            <AccountEdit
+              handleUpdateProfile={this.handleUpdateProfile}
+              user={user} 
+              location={location}
+              match={match}
             />
             :
             <Redirect to='/login' />
