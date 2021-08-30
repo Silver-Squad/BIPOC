@@ -1,40 +1,8 @@
-import React, { useState, useRef, useEffect } from "react";
-import { Link, useHistory } from "react-router-dom";
-import authService from "../../services/authService";
-import { useForm } from '../../hooks/useForm'
+import React from "react";
 import "./Resources.css";
 import YoutubeEmbed from "./YoutubeEmbed";
 
 export default function Community (props) {
-  const history = useHistory();
-  const formRef = useRef();
-  const [message, updateMessage] = useState('')
-  const [formInvalid, setValidForm] = useState(true)
-  const [formValue, handleChange] = useForm({
-    email: "",
-    password: "",
-    passwordConf: "",
-  });
-
-  // useEffect(() => {
-  //   formRef.current.checkValidity() ? setValidForm(false) : setValidForm(true);
-  //   updateMessage('');
-  // }, [formValue]);
-
-  // const handleSubmit = async (e) => {
-  //   const { handleSignupOrLogin } = props;
-  //   console.log(formValue.email, formValue.password)
-  //   e.preventDefault();
-  //   try {
-  //     if(formValue.password !== formValue.passwordConf)
-  //       throw Error("Passwords must match")
-  //     await authService.signup(formValue);
-  //     handleSignupOrLogin()
-  //     history.push("/");
-  //   } catch (err) {
-  //     updateMessage(err.message);
-  //   }
-  // };
 
     return (
       // header container
@@ -50,7 +18,7 @@ export default function Community (props) {
         </div>
       </div>
 
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-center pt-4">
           <div className="m-8">
           <div className="flex items-center justify-center pb-4">
             <div className="flex items-center justify-center bg-firstbox border-none leading-4 pl-4 pr-4 box-border rounded-lg">
@@ -71,9 +39,18 @@ export default function Community (props) {
           </div>
         </div>
 
+        <div className="pt-4">
+          <div className="flex items-center justify-center">
+            <div className="flex items-center justify-center bg-firstbox border-none leading-4 pl-4 pr-4 box-border rounded-lg">
+              <h4 className="m-6 text-4xl text-black font-bold">
+              Videos</h4>
+            </div>
+          </div>
+        </div>
+
+
         <div className="flex items-center justify-center">
           <div className="m-8">
-            <h2 className="m-6 text-6xl text-black font-bold flex items-center justify-center">Videos</h2>
             <div>
 
             {/* <div className="grid grid-cols-2 gap-4"> */}
@@ -103,9 +80,17 @@ export default function Community (props) {
           </div>
         </div>
 
+        <div className="pt-4">
+          <div className="flex items-center justify-center">
+            <div className="flex items-center justify-center bg-firstbox border-none leading-4 pl-4 pr-4 box-border rounded-lg">
+              <h4 className="m-6 text-4xl text-black font-bold">
+              Comments</h4>
+            </div>
+          </div>
+        </div>
+
         <div className="flex items-center justify-center">
           <div className="m-8">
-            <h2 className="m-6 text-6xl text-black font-bold flex items-center justify-center">Comments</h2>
               <div className="bg-askfor border-none leading-4 box-border h-15 w-275 p-4 ml-20 mr-20 rounded-lg min-w-min">
                 <div className="bg-askfor border-none leading-4 box-border h-15 w-275 p-10 ml-10 mr-10 rounded-lg min-w-min">
                   <div>
