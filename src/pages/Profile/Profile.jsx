@@ -20,10 +20,13 @@ export default function Profile(props) {
 
     return (
       <main>
-        
+        {/* <SearchBar search={search} setSearch={setSearch}/> */}
+        <SearchBar />
+
+
         {/* top card */}
         <div className="w-5/6 mx-auto flex">
-          <SearchBar search={search} setSearch={setSearch}/>
+          
           {/* company info section */}
           <div className="h-44 mt-10  w-3/5 bg-gray-200 overflow-hidden shadow rounded-lg">
             {/* {company img} */}
@@ -112,23 +115,23 @@ export default function Profile(props) {
         <div className="mt-10 mb-10 mx-auto w-5/6 overflow-hidden shadow rounded-lg">
 
           {/* tab section */}
-          <div className="tabs  bg-current h-16 px-4 py-5 sm:px-6">
+          <div className="tabs bg-current h-16 px-4 pt-3 pb-0 sm:px-6">
             <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
               <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
-                  <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Overview</a>
+                  <a class="nav-link active" id="overview-tab" data-bs-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="true">Overview</a>
                 </li>
                 <li class="nav-item" role="presentation">
                   <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Initiatives</a>
                 </li>
                 <li class="nav-item" role="presentation">
-                  <a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Demographics</a>
+                  <a class="nav-link" id="demographics-tab" data-bs-toggle="tab" href="#contact" role="tab" aria-controls="demographics-tab" aria-selected="false">Demographics</a>
                 </li>
                 <li class="nav-item" role="presentation">
-                  <a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Detailed Score</a>
+                  <a class="nav-link" id="score-tab" data-bs-toggle="tab" href="#score" role="tab" aria-controls="score" aria-selected="false">Detailed Score</a>
                 </li>
                 <li class="nav-item" role="presentation">
-                  <a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Inclusion Index</a>
+                  <a class="nav-link" id="inclusion-tab" data-bs-toggle="tab" href="#inclusion" role="tab" aria-controls="inclusion" aria-selected="false">Inclusion Index</a>
                 </li>
               </ul>
             </div>
@@ -154,9 +157,15 @@ export default function Profile(props) {
           <div className="bg-gray-300 h-96 px-4 py-5 sm:p-6">
             <div className="bg-white w-7/8 mx-auto">
               <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
-                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+                <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">Overview</div>
+
+                <div class="tab-pane fade" id="overview" role="tabpanel" aria-labelledby="initiatives-tab">Initiatives</div>
+
+                <div class="tab-pane fade" id="initiatives" role="tabpanel" aria-labelledby="demographics-tab">Demographics</div>
+
+                <div class="tab-pane fade" id="score-tab" role="tabpanel" aria-labelledby="score-tab">Detailed Score</div>
+
+                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Inclusion Index</div>
               </div>
             </div>  
           </div>
