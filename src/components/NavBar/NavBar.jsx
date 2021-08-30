@@ -8,9 +8,8 @@ const navigation = [
   { name: 'How it Works', href: '/howitworks', current: false, loggedIn: [true, false]},
   { name: 'Resources', href: '/resources', current: false, loggedIn: [true, false]},
   { name: 'About', href: '/about', current: false, loggedIn: [true, false] },
-  { name: 'Take the D&I Test', href: '/dnitest', current: false, loggedIn: [true] },
+  { name: 'Take the D&I Test', href: '/test', current: false, loggedIn: [true] },
   { name: 'Sign Up', href: '/signup', current: false, loggedIn: [false] },
-  { name: 'Homepage', href: '/homepage', current: false, loggedIn: [false] },
 ]
 
 

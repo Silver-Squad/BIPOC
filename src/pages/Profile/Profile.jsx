@@ -7,8 +7,8 @@ const tabs = [
   { name: 'Overview', href: '#overview', current: true,},
   { name: 'Initiatives', href: '#initiatives', current: false,},
   { name: 'Demographics', href: '#demographics', current: false,},
-  { name: 'Detailed Score', href: '#detailedscore', current: false,},
-  { name: 'Inclusion Index', href: '#inclusionindex', current: false,},
+  { name: 'Detailed Score', href: '#score', current: false,},
+  // { name: 'Inclusion Index', href: '#inclusionindex', current: false,},
 ]
 
 function classNames(...classes) {
@@ -16,7 +16,6 @@ function classNames(...classes) {
 }
 
 export default function Profile(props) {
-    let history = useHistory();
 
     return (
       <main>
@@ -116,56 +115,44 @@ export default function Profile(props) {
 
           {/* tab section */}
           <div className="tabs bg-current h-16 px-4 pt-3 pb-0 sm:px-6">
+            
             <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-              <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <ul class="nav nav-tabs mx-auto px-30" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
                   <a class="nav-link active" id="overview-tab" data-bs-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="true">Overview</a>
                 </li>
                 <li class="nav-item" role="presentation">
-                  <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Initiatives</a>
+                  <a class="nav-link" id="initiatives-tab" data-bs-toggle="tab" href="#initiatives" role="tab" aria-controls="initiatives" aria-selected="false">Initiatives</a>
                 </li>
                 <li class="nav-item" role="presentation">
-                  <a class="nav-link" id="demographics-tab" data-bs-toggle="tab" href="#contact" role="tab" aria-controls="demographics-tab" aria-selected="false">Demographics</a>
+                  <a class="nav-link" id="demographics-tab" data-bs-toggle="tab" href="#demographics" role="tab" aria-controls="demographics" aria-selected="false">Demographics</a>
                 </li>
                 <li class="nav-item" role="presentation">
                   <a class="nav-link" id="score-tab" data-bs-toggle="tab" href="#score" role="tab" aria-controls="score" aria-selected="false">Detailed Score</a>
                 </li>
-                <li class="nav-item" role="presentation">
+                {/* <li class="nav-item" role="presentation">
                   <a class="nav-link" id="inclusion-tab" data-bs-toggle="tab" href="#inclusion" role="tab" aria-controls="inclusion" aria-selected="false">Inclusion Index</a>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>
-          {/* <div className="tabs  bg-current h-16 px-4 py-5 sm:px-6">
-              <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-                    {tabs.map((item, idx) => (
-                          <a key={idx}
-                            href={item.href}
-                            className={classNames(
-                              item.current ? 'border-b-2 font-medium border-gray-300 pt-1 pb-4 px-10 rounded-t-2xl bg-gray-300 text-black' : ' text-white inline-flex items-center px-1 pt-1  text-md font-medium pb-5'
-                            )}
-                            aria-current={item.current ? 'page' : undefined}
-                          >
-                            {item.name}
-                          </a>
-                        ))}
-              </div> 
-          </div> */}
 
           {/* content section */}
 
           <div className="bg-gray-300 h-96 px-4 py-5 sm:p-6">
             <div className="bg-white w-7/8 mx-auto">
               <div class="tab-content" id="myTabContent">
+
                 <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">Overview</div>
 
-                <div class="tab-pane fade" id="overview" role="tabpanel" aria-labelledby="initiatives-tab">Initiatives</div>
+                <div class="tab-pane fade" id="initiatives" role="tabpanel" aria-labelledby="initiatives-tab">Initiatives</div>
 
-                <div class="tab-pane fade" id="initiatives" role="tabpanel" aria-labelledby="demographics-tab">Demographics</div>
+                <div class="tab-pane fade" id="demographics" role="tabpanel" aria-labelledby="demographics-tab">Demographics</div>
 
-                <div class="tab-pane fade" id="score-tab" role="tabpanel" aria-labelledby="score-tab">Detailed Score</div>
-
-                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Inclusion Index</div>
+                <div class="tab-pane fade" id="score" role="tabpanel" aria-labelledby="score-tab">Detailed Score</div>
+                
+                {/* Inclusion index to be included in future version  */}
+                {/* <div class="tab-pane fade" id="inclusion" role="tabpanel" aria-labelledby="inclusion-tab">Inclusion Index</div> */}
               </div>
             </div>  
           </div>

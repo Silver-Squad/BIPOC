@@ -1,3 +1,27 @@
+.nav-tabs {
+  border: 0px!important;
+  border-color: #2A3B50!important;
+}
+
 .tabs {
   background-color: #2A3B50;
+  color: white;
+  border-color: #2A3B50!important;
+  padding-top: 1.4rem!important;
+  padding-bottom: 0rem!important;
+  margin-bottom: 0rem!important;
 }
+
+ul.nav {
+  padding-bottom: 0rem!important;
+  margin-bottom: 0rem!important;
+}
+
+a {
+  border-color: #2A3B50!important;
+}
+
+li > a.active {
+  background-color: rgba(209, 213, 219) !important;
+}
+

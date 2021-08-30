@@ -2,7 +2,7 @@
 export default function HowItWorks () {
 
     return (
-      // header container
+      <>
       <div className="ml-20 mr-20">
         <div className="flex items-center justify-center">
           <div className="grid grid-cols-2 gap-4">

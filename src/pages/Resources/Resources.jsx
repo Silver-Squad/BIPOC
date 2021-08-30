@@ -1,5 +1,4 @@
 import "./Resources.css";
-import YoutubeEmbed from "./YoutubeEmbed";
 
 export default function Resources (props) {
   
