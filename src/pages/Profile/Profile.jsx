@@ -1,6 +1,5 @@
 import './Profile.css';
 import React from 'react';
-import { useHistory } from 'react-router-dom';
 import SearchBar from '../../components/SearchBar/SearchBar'
 
 const tabs = [

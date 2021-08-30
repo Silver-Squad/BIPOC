@@ -19,7 +19,16 @@ const profileSchema = new Schema(
     state: String, 
     zip: Number,
     website: String,
-    google: String, 
+    initiativeOne: String, 
+    initiativeTwo: String, 
+    empRatio: {
+      type: String, 
+      enum: ['0-5%','5-15%','15-25%','25+%',]
+    },
+    leadershipRatio: {
+      type: String, 
+      enum: ['0-5%','5-15%','15-25%','25+%',]
+    },
     quizscores: [scoreSchema],
     owner: [{type: Schema.Types.ObjectId, ref: 'User'}],    
   },

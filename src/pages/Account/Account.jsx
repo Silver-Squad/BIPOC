@@ -1,9 +1,36 @@
 import './Account.css';
-import { Fragment, useState } from 'react'
+import React, { useState, useEffect, useRef  } from 'react';
+import { useHistory } from 'react-router-dom'
+import { useForm } from '../../hooks/useForm'
+import * as profileAPI from '../../services/profileService';
 
 
 
-export default function Account() {
+export default function Account(props) {
+
+  //  allow us history access for routing 
+  const history = useHistory();
+  // initialize form as invalid
+  const [formInvalid, setValidForm] = useState(true)
+  // initialize object for form validation
+  const formRef = useRef()
+  //  custom hook to initialize state
+  const [state, handleChange] = useForm({
+      name: "",
+      street: "",  
+      city: "",
+      state: "",
+      zip:  0,
+      website: "",
+      initiativeOne: "",
+      initiativeTwo: "",
+  })
+
+  // function to handle snippet create via api
+  async function handleAddProfile(newProfile){
+    await profileAPI.create(newProfile)
+    history.push('/profile')
+  }
 
   return (
     <main className="w-5/6 mt-10 mx-auto">
@@ -22,7 +49,7 @@ export default function Account() {
           <div className="space-y-6 sm:space-y-5">
             <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
               <label htmlFor="first-name" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
-                First name
+                Company Name
               </label>
               <div className="mt-1 sm:mt-0 sm:col-span-2">
                 <input
@@ -35,54 +62,7 @@ export default function Account() {
               </div>
             </div>
 
-            <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-              <label htmlFor="last-name" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
-                Last name
-              </label>
-              <div className="mt-1 sm:mt-0 sm:col-span-2">
-                <input
-                  type="text"
-                  name="last-name"
-                  id="last-name"
-                  autoComplete="family-name"
-                  className="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md"
-                />
-              </div>
-            </div>
-
-            <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
-                Email address
-              </label>
-              <div className="mt-1 sm:mt-0 sm:col-span-2">
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  autoComplete="email"
-                  className="block max-w-lg w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border-gray-300 rounded-md"
-                />
-              </div>
-            </div>
-
-            <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-              <label htmlFor="country" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
-                Country / Region
-              </label>
-              <div className="mt-1 sm:mt-0 sm:col-span-2">
-                <select
-                  id="country"
-                  name="country"
-                  autoComplete="country"
-                  className="max-w-lg block focus:ring-indigo-500 focus:border-indigo-500 w-full shadow-sm sm:max-w-xs sm:text-sm border-gray-300 rounded-md"
-                >
-                  <option>United States</option>
-                  <option>Canada</option>
-                  <option>Mexico</option>
-                </select>
-              </div>
-            </div>
-
+  
             <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
               <label htmlFor="street-address" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
                 Street address
@@ -142,6 +122,89 @@ export default function Account() {
             </div>
           </div>
         </div>
+      </div>
+
+      <div>
+            <h3 className="mt-4 text-lg leading-6 font-medium text-gray-900">Company Initiatives</h3>
+            <p className="mt-2 mx-auto max-w-2xl text-sm text-gray-500">
+              Describe the Initiatives your company is taking to increase minority representation 
+            </p>
+      </div>
+
+      <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
+              <label htmlFor="about" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+              Intitiative One
+              </label>
+              <div className="mt-1 sm:mt-0 sm:col-span-2">
+                <textarea
+                  id="about"
+                  name="about"
+                  rows={3}
+                  className="max-w-lg shadow-sm block w-full focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border border-gray-300 rounded-md"
+                  defaultValue={''}
+                />
+                
+              </div>
+      </div>
+
+      <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
+              <label htmlFor="about" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+              Intitiative Two
+              </label>
+              <div className="mt-1 sm:mt-0 sm:col-span-2">
+                <textarea
+                  id="about"
+                  name="about"
+                  rows={3}
+                  className="max-w-lg shadow-sm block w-full focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border border-gray-300 rounded-md"
+                  defaultValue={''}
+                />
+              </div>
+      </div>
+
+      <div>
+            <h3 className="mt-4 text-lg leading-6 font-medium text-gray-900">Company Demographics</h3>
+            <p className="mt-2 mx-auto max-w-2xl text-sm text-gray-500">
+              Choose the option that best represents current minority employee makeup
+            </p>
+      </div>
+
+      <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
+              <label htmlFor="country" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                Percentage of minority employees
+              </label>
+              <div className="mt-1 sm:mt-0 sm:col-span-2">
+                <select
+                  id="country"
+                  name="country"
+                  autoComplete="country"
+                  className="max-w-lg block focus:ring-indigo-500 focus:border-indigo-500 w-full shadow-sm sm:max-w-xs sm:text-sm border-gray-300 rounded-md"
+                >
+                  <option>0-5%</option>
+                  <option>5-15%</option>
+                  <option>15-25%</option>
+                  <option>25+%</option>
+                </select>
+              </div>
+      </div>
+
+      <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
+              <label htmlFor="country" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+              Percentage of minority employees in leadership positions
+              </label>
+              <div className="mt-1 sm:mt-0 sm:col-span-2">
+                <select
+                  id="country"
+                  name="country"
+                  autoComplete="country"
+                  className="max-w-lg block focus:ring-indigo-500 focus:border-indigo-500 w-full shadow-sm sm:max-w-xs sm:text-sm border-gray-300 rounded-md"
+                >
+                  <option>0-5%</option>
+                  <option>5-15%</option>
+                  <option>15-25%</option>
+                  <option>25+%</option>
+                </select>
+              </div>
       </div>
 
       <div className="pt-5">

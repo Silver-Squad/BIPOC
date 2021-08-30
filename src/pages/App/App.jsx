@@ -9,8 +9,6 @@ import HowItWorks from "../HowItWorks/HowItWorks";
 import authService from "../../services/authService";
 import Profile from "../../pages/Profile/Profile"
 import Account from "../../pages/Account/Account"
-
-
 import Resources from "../Resources/Resources";
 import Research from "../Resources/Research";
 import Acceleration from "../Resources/Acceleration";
@@ -18,7 +16,6 @@ import Community from "../Resources/Community";
 import Education from "../Resources/Education";
 import Events from "../Resources/Events";
 import GetHired from "../Resources/GetHired";
-
 import Test from "../Quiz/Test"
 
 import "./App.css";
@@ -34,7 +31,7 @@ function App (props) {
   };
 
   const handleSignupOrLogin = () => {
-    setUser(authService.getUser())
+    setUser(authService.getUser());
   }
 
     return (
@@ -50,6 +47,7 @@ function App (props) {
             />
           )}
         />
+
         {/* route for company profiles */}
         <Route
           exact
@@ -61,6 +59,7 @@ function App (props) {
             />
           )}
         />
+
         <Route 
           exact
           path='/account' 
@@ -72,7 +71,6 @@ function App (props) {
           )}
         />
 
-
         <Route
           exact
           path="/homepage"
@@ -83,6 +81,7 @@ function App (props) {
             />
           )}
         />
+
         <Route
           exact
           path="/howitworks"
@@ -93,6 +92,7 @@ function App (props) {
             />
           )}
         />
+
         <Route
           exact
           path="/resources"
@@ -114,6 +114,7 @@ function App (props) {
             />
           )}
         />
+
         <Route
           exact
           path="/resources/acceleration"
@@ -124,6 +125,7 @@ function App (props) {
             />
           )}
         />
+
         <Route
           exact
           path="/resources/community"
@@ -134,6 +136,7 @@ function App (props) {
             />
           )}
         />
+
         <Route
           exact
           path="/resources/education"
@@ -144,6 +147,7 @@ function App (props) {
             />
           )}
         />
+
         <Route
           exact
           path="/resources/events"
@@ -154,6 +158,7 @@ function App (props) {
             />
           )}
         />
+
         <Route
           exact
           path="/resources/gethired"
@@ -175,6 +180,7 @@ function App (props) {
             />
           )}
         />
+
         <Route
           exact
           path="/signup"
@@ -185,6 +191,7 @@ function App (props) {
             />
           )}
         />
+
         <Route
           exact
           path="/login"

@@ -106,7 +106,7 @@ export default function NavBar(props) {
                           <Menu.Item>
                             {({ active }) => (
                               <a
-                                href="/"
+                                href="/profile"
                                 className={classNames(
                                   active ? 'bg-gray-100' : '',
                                   'block px-4 py-2 text-sm text-gray-700'
@@ -119,7 +119,7 @@ export default function NavBar(props) {
                           <Menu.Item>
                             {({ active }) => (
                               <a
-                                href="/"
+                                href="/account"
                                 className={classNames(
                                   active ? 'bg-gray-100' : '',
                                   'block px-4 py-2 text-sm text-gray-700'

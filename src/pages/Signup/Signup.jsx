@@ -28,7 +28,7 @@ export default function Signup (props) {
         throw Error("Passwords must match")
       await authService.signup(formValue);
       handleSignupOrLogin()
-      history.push("/");
+      history.push("/account");
     } catch (err) {
       updateMessage(err.message);
     }

@@ -27,7 +27,7 @@ export default function Login (props) {
         throw Error("Passwords must match")
       await authService.login(formValue);
       handleSignupOrLogin()
-      history.push("/");
+      history.push("/account");
     } catch (err) {
       updateMessage(err.message);
     }
