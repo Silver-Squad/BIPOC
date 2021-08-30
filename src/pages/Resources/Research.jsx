@@ -40,12 +40,15 @@ export default function Research (props) {
       // header container
       <div>
 
-        <div className="flex items-center justify-center">
-          <div className="m-8">
-            <h2 className="m-6 text-6xl text-black font-bold">
-            Research</h2>
+      <div className="flex items-center justify-center pt-10 pb-10 pl-4 pr-4">
+        <div className="flex items-center justify-center bg-altbox border-none leading-4 pl-4 pr-4 box-border rounded-lg">
+          <div className="ml-6 mt-6 mb-6 text-6xl text-black font-bold">
+          Research</div>
+          <div className="flex items-center justify-center bg-altbox border-none leading-4 box-border h-130 w-100 p-4 rounded-lg text-black font-bold font-style: italic">
+            Informational resources that provide insight into the status of diversity and inclusion in the workplace
           </div>
         </div>
+      </div>
 
         <div className="pb-10">
           <div className="bg-askfor border-none leading-4 box-border h-15 w-275 p-4 ml-20 mr-20 rounded-lg min-w-min">
