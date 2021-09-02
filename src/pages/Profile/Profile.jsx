@@ -11,58 +11,59 @@ export default function Profile(props) {
 
         {/* top card */}
         <div className="w-5/6 mx-auto flex">
-          
           {/* company info section */}
-          <div className="h-44 mt-10  w-3/5 bg-gray-200 overflow-hidden shadow rounded-lg">
+          <div className="comp-info h-44 mt-10 w-3/5 bg-gray-200 overflow-hidden rounded-lg">
             {/* {company img} */}
-            <div className="flex mt-4 px-4 py-5 sm:px-6">
-            <img
-            width='100'
-            src="/images/icons/icons8-company-100.png"
-            alt="building"
-            className=""
-            /> 
-            {/* {company information} */}
-            <div className="">
-              <h1>Company Name</h1>
-              <ul>
-                <li>San Francisco, USA</li>
-                <li>123-456-7890</li>
-                <li>Founded 2021</li>
-              </ul>
-              {/* <div>
-              <ul>
-                <li>San Francisco, USA</li>
-                <li>123-456-7890</li>
-              </ul>  
-              </div> */}
-            </div>
-            {/* {links and approved badge} */}
-            <div className="justify-end w-10">
+            <div className="flex justify-center h-full px-4 py-4 sm:px-6">
+              <div className='my-auto'>
               <img
-              width='50'
-              src="/images/icons/badge.svg"
+              width='100'
+              src="/images/icons/icons8-company-100.png"
               alt="building"
               className=""
               /> 
-              <img
-              width='25'
-              src="/images/icons/icons8-linkedin.svg"
-              alt="building"
-              className=""
-              /> 
-              <img
-              width='25'
-              src="/images/icons/globe.svg"
-              alt="building"
-              className=""
-              />   
-            </div>
+              </div>
+              {/* {company information} */}
+              <div className="ml-2 my-auto w-3/5 ">
+                <h1 className='small-info-title'>Company Name</h1>
+                <ul className='small-info'>
+                  <li>San Francisco, USA</li>
+                  <li>123-456-7890</li>
+                  <li>Founded 2021</li>
+                </ul>
+                {/* <div>
+                <ul>
+                  <li>San Francisco, USA</li>
+                  <li>123-456-7890</li>
+                </ul>  
+                </div> */}
+              </div>
+              {/* {links and approved badge} */}
+              <div className="my-auto w-1/5">
+                <img
+                width='50'
+                src="/images/icons/badge.svg"
+                alt="building"
+                className=""
+                /> 
+                <img
+                width='25'
+                src="/images/icons/icons8-linkedin.svg"
+                alt="building"
+                className=""
+                /> 
+                <img
+                width='25'
+                src="/images/icons/globe.svg"
+                alt="building"
+                className=""
+                />   
+              </div>
             </div>
           </div>
 
           {/* score section */}
-          <div className="ml-8 h-44 mt-10 w-2/5 bg-gray-200 overflow-hidden shadow rounded-lg">
+          <div className="score-info ml-8 h-44 mt-10 w-2/5 bg-gray-200 overflow-hidden rounded-lg">
             <div className="flex px-4 py-5 sm:px-6">
               <div className="align-center w-2/3">
                 <h1 className="text-3xl font-medium">Overall Score</h1>
@@ -167,7 +168,10 @@ export default function Profile(props) {
                 </div>
                   
 
-                <div className="tab-pane fade" id="demographics" role="tabpanel" aria-labelledby="demographics-tab">Demographics</div>
+                <div className="tab-pane fade" id="demographics" role="tabpanel" aria-labelledby="demographics-tab">
+
+
+                </div>
 
                 <div className="tab-pane fade" id="score" role="tabpanel" aria-labelledby="score-tab">Detailed Score</div>
                 

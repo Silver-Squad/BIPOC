@@ -45,3 +45,28 @@ li > a.active {
 .tab-bg-inner {
   height: 590px!important;
 }
+
+.comp-info {
+  box-shadow: 3px 4px 4px #39495D;
+}
+
+.score-info {
+  box-shadow: 3px 5px 2px rgba(59,184,0,0.7);
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: 400;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.small-info-title {
+  text-align: start;
+}
+
+.small-info {
+  font-size: 14px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-align: start;
+
+}
