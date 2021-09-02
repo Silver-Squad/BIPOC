@@ -3,36 +3,22 @@ import React, { useState, useEffect } from 'react';
 import { useForm } from '../../hooks/useForm'
 import { useLocation } from 'react-router-dom';
 import * as profileService from '../../services/profileService';
-
-
+import ProfilePreview from '../../components/ProfilePreview/ProfilePreview';
 
 
 const SearchResults = props => {
-
     const [allprofiles, setAllprofiles] = useState([]);
     const [search, setSearch] = useForm({
         search: "", 
     })
     const [filteredResults, setFilteredResults] = useState([]);
-    const {pathname} = useLocation();
     const {currentUser} = props;
 
     useEffect(() => {
         (async function() {
-            let profiles = [];
-            if (pathname === '/search/all' && !!currentUser === false) {
-                profiles = await profileService.getAllPublic();
-            } else if (pathname === '/search/all') {
-                const userPrivateprofiles = await profileService.getPrivateByCurrentUser(currentUser._id);
-                const allPublicprofiles = await profileService.getAllPublic();
-                profiles = userPrivateprofiles.concat(allPublicprofiles);
-            } else if (pathname === '/search/mysnips') {
-                profiles = await profileService.getAllByCurrentUser(currentUser._id);
-            }
+            let profiles = await profileService.getAll();
             setAllprofiles(profiles);
-        })();
-    }, [pathname, currentUser])
-
+        })();}, [])
     
     useEffect(() => {
         setFilteredResults(
@@ -54,7 +40,7 @@ const SearchResults = props => {
             <ul className="space-y-3">
                 {searchResults.map((profile, idx) => (
                     <li key={idx} className="bg-white shadow overflow-auto rounded-md px-6 py-4">
-                        <profilePreview key={idx} user={props.user} profile={profile} />
+                        <ProfilePreview key={idx} user={props.user} profile={profile} />
                     </li> 
                 ))}
             </ul>

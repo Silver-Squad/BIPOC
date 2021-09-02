@@ -1,0 +1,36 @@
+.profile-preview {
+  /* border: 3px solid yellow; */
+  height: 120px;
+  margin: 15px;
+  padding: 10px;
+
+  color: #444242;
+  font-family: monospace !important;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.profile-preview-logo {
+  /* border: 2px solid green; */
+  height: 90px;
+  width: 90px;
+  margin-right: 25px;
+}
+
+.profile-preview-content {
+  /* border: 3px solid aqua; */
+  width: calc(100% - 90px);
+  text-align: left;
+}
+
+.profile-preview-title {
+  font-weight: bold;
+  font-size: 22px;
+  margin: 5px 10px 5px 0;
+}
+
+.profile-preview-bottom {
+  font-weight: bold;
+  font-size: 12px;
+}

@@ -68,5 +68,17 @@ h1 {
   font-size: 14px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   text-align: start;
+}
 
+.score-h1 {
+  font-size: 30px;
+}
+
+.score-p {
+  color: rgba(59,184,0,0.7);
+  font-weight: 1000;
+}
+
+.icon {
+  fill:'#3BB800';
 }

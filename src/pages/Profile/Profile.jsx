@@ -31,67 +31,73 @@ export default function Profile(props) {
                   <li>123-456-7890</li>
                   <li>Founded 2021</li>
                 </ul>
-                {/* <div>
-                <ul>
-                  <li>San Francisco, USA</li>
-                  <li>123-456-7890</li>
-                </ul>  
-                </div> */}
               </div>
               {/* {links and approved badge} */}
               <div className="my-auto w-1/5">
-                <img
-                width='50'
-                src="/images/icons/badge.svg"
-                alt="building"
-                className=""
-                /> 
-                <img
-                width='25'
-                src="/images/icons/icons8-linkedin.svg"
-                alt="building"
-                className=""
-                /> 
-                <img
-                width='25'
-                src="/images/icons/globe.svg"
-                alt="building"
-                className=""
-                />   
+                <div className='flex justify-end mb-4'>
+                  <img
+                  width='50'
+                  src="/images/icons/badge.svg"
+                  alt="building"
+                  className=""
+                  /> 
+                </div>
+                <div className='flex justify-end'>
+                  <img
+                  width='25'
+                  src="/images/icons/icons8-linkedin.svg"
+                  alt="building"
+                  className=""
+                  /> 
+                  <img
+                  width='25'
+                  src="/images/icons/globe.svg"
+                  alt="building"
+                  className="ml-2"
+                  />   
+                </div>
               </div>
             </div>
           </div>
 
           {/* score section */}
           <div className="score-info ml-8 h-44 mt-10 w-2/5 bg-gray-200 overflow-hidden rounded-lg">
-            <div className="flex px-4 py-5 sm:px-6">
-              <div className="align-center w-2/3">
-                <h1 className="text-3xl font-medium">Overall Score</h1>
-                <p className='text-7xl'>99%</p>
-              </div>
-              <div className='w-1/3'>
-                <div className="absolute pt-0 mt-0">
-                  <img
-                  width='25'
-                  src="/images/icons/bookmark.svg"
-                  alt="building"
-                  className="float-right"
-                  />
+            <div className="flex justify-end mr-4">
+              <img
+              width='35'
+              src="/images/icons/bookmark.svg"
+              alt="building"
+              className='icon'
+              />
+            </div>
+            <div className="flex justify-center px-4 sm:px-6">
+                
+                <div>
+                  <h1 className="score-h1 text-4xl font-medium">D&#38;I Score</h1>
+                  <p className='score-p text-7xl'>90%</p>
                 </div>
                 
-                <ul className='text-left'>
-                  <li>Trajectory</li>
-                  <li>Diversity</li>
-                  <li>Inclusion</li>
-                  <li>Hiring</li>
-                </ul>
-                <ul className="text-right">
-                  <li>80%</li>
-                  <li>80%</li>
-                  <li>80%</li>
-                  <li>80%</li>
-                </ul>
-              </div>  
+              
+                
+              {/* future sections for the test */}
+
+              {/* <div className="bottom-half inline-flex">
+                <div className='w-1/3'>
+                  <ul className='text-left'>
+                    <li>Trajectory</li>
+                    <li>Diversity</li>
+                    <li>Inclusion</li>
+                    <li>Hiring</li>
+                  </ul>
+                  <ul className="text-right">
+                    <li>80%</li>
+                    <li>80%</li>
+                    <li>80%</li>
+                    <li>80%</li>
+                  </ul>
+                </div>
+              </div>  */}
+
             </div>
           </div>
         </div>

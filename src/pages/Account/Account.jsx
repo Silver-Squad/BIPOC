@@ -21,14 +21,15 @@ export default function Account(props) {
     website: "",
     initiativeOne: "",
     initiativeTwo: "",
-    empRatio: "",
-    leaderRatio: "",
+    empRatio: "0-5%",
+    leaderRatio: "0-5%",
     score: "0",
   });
 
   // function to handle profile create via api
   async function handleAddProfile(newProfileData) {
-    await profileService.create(newProfileData);
+    const newProfile = await profileService.create(newProfileData);
+    console.log(newProfile)
     history.push("/");
   }
 
@@ -42,7 +43,6 @@ export default function Account(props) {
     e.preventDefault();
     handleAddProfile(state);
   }
-
 
   return (
     <main className="w-5/6 mt-10 mx-auto">

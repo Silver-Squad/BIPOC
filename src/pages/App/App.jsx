@@ -1,5 +1,5 @@
 import React, { Component, useEffect } from "react";
-import { Route, Redirect} from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
 import Footer from "../../components/Footer/Footer";
 import Signup from "../Signup/Signup";
@@ -7,10 +7,10 @@ import Login from "../Login/Login";
 import HomePage from "../HomePage/HomePage";
 import HowItWorks from "../HowItWorks/HowItWorks";
 import authService from "../../services/authService";
-import * as profileService from '../../services/profileService'
-import Profile from "../../pages/Profile/Profile"
-import Account from "../../pages/Account/Account"
-import AccountEdit from "../../pages/AccountEdit/AccountEdit"
+import * as profileService from "../../services/profileService";
+import Profile from "../../pages/Profile/Profile";
+import Account from "../../pages/Account/Account";
+import AccountEdit from "../../pages/AccountEdit/AccountEdit";
 import Resources from "../Resources/Resources";
 import Research from "../Resources/Research";
 import Acceleration from "../Resources/Acceleration";
@@ -18,8 +18,9 @@ import Community from "../Resources/Community";
 import Education from "../Resources/Education";
 import Events from "../Resources/Events";
 import GetHired from "../Resources/GetHired";
-import Test from "../Quiz/Test"
+import Test from "../Quiz/Test";
 import "./App.css";
+import SearchResults from "../SearchResults/SearchResults";
 
 class App extends Component {
   state = {
@@ -35,40 +36,48 @@ class App extends Component {
 
   handleSignupOrLogin = () => {
     this.setState({ user: authService.getUser() });
-  }
+  };
 
-  handleAddProfiles = async newProfileData => {
-    const newProfile = await profileService.create(newProfileData);
-    newProfile.addedBy = { name: this.state.user.name, _id: this.state.user._id }
-    this.setState(state => ({
-      profiles: [...state.profiles, newProfile]
-    }), () => this.props.history.push('/profile'));
-  }
+  // handleAddProfiles = async (newProfileData) => {
+  //   const newProfile = await profileService.create(newProfileData);
+  //   console.log(newProfile);
+  //   newProfile.addedBy = {
+  //     name: this.state.user.name,
+  //     _id: this.state.user._id,
+  //   };
+  //   this.setState(
+  //     (state) => ({
+  //       profiles: [...state.profiles, newProfile],
+  //     }),
+  //     () => this.props.history.push("/profile")
+  //   );
+  // };
 
-  handleUpdateProfile = async updatedProfileData => {
+  handleUpdateProfile = async (updatedProfileData) => {
     const updatedProfile = await profileService.update(updatedProfileData);
-    updatedProfile.addedBy = {name: this.state.user.name, _id: this.state.user._id}
-    const newProfilesArray = this.state.Profiles.map(m => 
+    updatedProfile.addedBy = {
+      name: this.state.user.name,
+      _id: this.state.user._id,
+    };
+    const newProfilesArray = this.state.Profiles.map((m) =>
       m._id === updatedProfile._id ? updatedProfile : m
     );
-    this.setState(
-      {profiles: newProfilesArray},
-      () => this.props.history.push('/')
+    this.setState({ profiles: newProfilesArray }, () =>
+      this.props.history.push("/")
     );
-  }
+  };
 
-  
-  render () {
-    const {user} = this.state
+  render() {
+    const { user } = this.state;
 
     return (
       <>
-        <NavBar user={user} handleLogout={this.handleLogout}/>
+        <NavBar user={user} handleLogout={this.handleLogout} />
 
         <Route
           exact
           path="/"
-          render={({history}) => (
+          render={({ history }) => (
             <HomePage
               history={history}
               handleSignupOrLogin={this.handleSignupOrLogin}
@@ -79,45 +88,54 @@ class App extends Component {
         {/* route for company profiles */}
         <Route
           exact
-          path='/profile'
-          render={({history}) => (
-            <Profile
-            history={history}
-            currentUser={user}
-            />
+          path="/profile"
+          render={({ history }) => (
+            <Profile history={history} currentUser={user} />
           )}
         />
 
-        <Route exact path='/account' render={() => 
-          authService.getUser() ?
-            <Account
-              handleAddProfiles={this.handleAddProfiles}
-              user={user} 
-            />
-            :
-            <Redirect to='/login' />
-        } />
+        <Route
+          exact
+          path="/account"
+          render={() =>
+            authService.getUser() ? (
+              <Account handleAddProfiles={this.handleAddProfiles} user={user} />
+            ) : (
+              <Redirect to="/login" />
+            )
+          }
+        />
 
-        <Route exact path='/account/edit/' render={({match, location}) => 
-          authService.getUser() ?
-            <AccountEdit
-              handleUpdateProfile={this.handleUpdateProfile}
-              user={user} 
-              location={location}
-              match={match}
-            />
-            :
-            <Redirect to='/login' />
-        } />
+        <Route
+          exact
+          path="/account/edit/"
+          render={({ match, location }) =>
+            authService.getUser() ? (
+              <AccountEdit
+                handleUpdateProfile={this.handleUpdateProfile}
+                user={user}
+                location={location}
+                match={match}
+              />
+            ) : (
+              <Redirect to="/login" />
+            )
+          }
+        />
+        
+        <Route 
+         exact 
+         path="/search"
+         render={() =>
+          <SearchResults/>
+
+        }
+        />
 
         <Route
           exact
           path="/howitworks"
-          render={({ history }) => (
-            <HowItWorks
-              history={history} 
-            />
-          )}
+          render={({ history }) => <HowItWorks history={history} />}
         />
 
         <Route
@@ -201,9 +219,7 @@ class App extends Component {
           exact
           path="/test"
           render={({ counter }) => (
-            <Test
-              handleSignupOrLogin={this.handleSignupOrLogin}
-            />
+            <Test handleSignupOrLogin={this.handleSignupOrLogin} />
           )}
         />
 
