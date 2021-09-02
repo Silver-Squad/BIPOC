@@ -12,6 +12,10 @@
   margin-bottom: 0rem!important;
 }
 
+.tab-pane {
+  min-height: 90%;
+}
+
 ul.nav {
   padding-bottom: 0rem!important;
   margin-bottom: 0rem!important;
@@ -25,3 +29,19 @@ li > a.active {
   background-color: rgba(209, 213, 219) !important;
 }
 
+.right-side > li {
+  margin-top: 6px;
+  background-color: #CECEE2;
+  border-radius: 10px;
+  border: 1px;
+  border-color: black;
+  height: 120px;
+}
+
+.right-side > li:hover {
+  background-color: #374897;
+} 
+
+.tab-bg-inner {
+  height: 590px!important;
+}

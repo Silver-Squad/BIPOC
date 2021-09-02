@@ -125,13 +125,47 @@ export default function Profile(props) {
 
           {/* content section */}
 
-          <div className="bg-gray-300 h-96 px-4 py-5 sm:p-6">
-            <div className="bg-white w-7/8 mx-auto">
-              <div className="tab-content" id="myTabContent">
+          <div className="bg-gray-300 h-auto px-4 py-4 sm:p-6">
+            <div className="tab-bg-inner bg-white w-7/8 h-full ">
+              <div className="px-2 tab-content" id="myTabContent">
 
-                <div className="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">Overview</div>
+                <div className="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
+                  <h1>Overview</h1>
+                </div>
 
-                <div className="tab-pane fade" id="initiatives" role="tabpanel" aria-labelledby="initiatives-tab">Initiatives</div>
+                <div className="tab-pane fade" id="initiatives" role="tabpanel" aria-labelledby="initiatives-tab">
+                  <div>
+                    <h1>Company's Initiatives</h1>
+                  </div>
+                  <div className='flex'>
+                    <div className='w-1/2 '>Left
+                      <div className='w-1/2'>
+                        <ul className=''>
+                          <li className=''>1.</li>
+                          <li className=''>2.</li>
+                          <li className=''>3.</li>
+                        </ul>
+                      </div>
+                      <div className='block w-1/2'>
+                        <ul className=''>
+                          <li className=''>Title</li>
+                          <li className=''>Title</li>
+                          <li className=''>Title</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div className='w-1/2'>Right Side
+                      <ul className='right-side'>
+                          <li>Initiative One Content</li>
+                          <li>Initiative Two Content</li>
+                          <li>Initiative Three Content</li>
+                      </ul>    
+                    </div>
+                  </div>
+                
+                
+                </div>
+                  
 
                 <div className="tab-pane fade" id="demographics" role="tabpanel" aria-labelledby="demographics-tab">Demographics</div>
 
