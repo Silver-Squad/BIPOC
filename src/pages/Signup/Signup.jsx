@@ -18,7 +18,7 @@ export default function Signup (props) {
     formRef.current.checkValidity() ? setValidForm(false) : setValidForm(true);
     updateMessage('');
   }, [formValue]);
-  
+
   const handleSubmit = async (e) => {
     const { handleSignupOrLogin } = props;
     e.preventDefault();
@@ -38,16 +38,16 @@ export default function Signup (props) {
       <div className="flex-1 flex flex-col justify-center py-12 px-4 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
         <div className="mx-auto w-full max-w-sm lg:w-96">
           <div className="flex justify-center">
-          <img width="150" 
-          src="/images/Auto-Mastery-fav.png" 
+          <img width="150"
+          src="/images/diversify-logo.png"
           alt='logo'
           />
           </div>
           <h2 className="mt-6 text-3xl font-extrabold text-gray-900">Sign Up for an account</h2>
           <div className="mt-8">
-       
+
             <div className="mt-6">
-              <form ref={formRef} autoComplete='off' onSubmit={handleSubmit}className="space-y-6">  
+              <form ref={formRef} autoComplete='off' onSubmit={handleSubmit}className="space-y-6">
               {message && <p>{message}</p>}
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700">
@@ -128,7 +128,7 @@ export default function Signup (props) {
                 <div>
                   <button
                     disabled={formInvalid}
-                    className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    className="bg-test text-white rounded-full w-4/12 p-2 hover:bg-homepage focus:outline-none flex items-center justify-center font-extrabold"
                   >
                     Sign up
                   </button>
@@ -145,13 +145,10 @@ export default function Signup (props) {
       <div className="hidden lg:block relative w-0 flex-1">
         <img
           className="absolute inset-0 h-full w-full object-cover"
-          src="/images/car-unsplash.jpg"
+          src="/images/christina-wocintechchat-com-RTJIXQNne68-unsplash.jpg"
           alt=""
         />
       </div>
     </div>
     );
   }
-
-
-

@@ -21,6 +21,7 @@ import GetHired from "../Resources/GetHired";
 import Test from "../Quiz/Test";
 import "./App.css";
 import SearchResults from "../SearchResults/SearchResults";
+import About from "../About/About";
 
 class App extends Component {
   state = {
@@ -51,6 +52,17 @@ class App extends Component {
           path="/"
           render={({ history }) => (
             <HomePage
+              history={history}
+              handleSignupOrLogin={this.handleSignupOrLogin}
+            />
+          )}
+        />
+
+        <Route
+          exact
+          path="/about"
+          render={({ history }) => (
+            <About
               history={history}
               handleSignupOrLogin={this.handleSignupOrLogin}
             />
@@ -94,9 +106,9 @@ class App extends Component {
             )
           }
         />
-        
-        <Route 
-         exact 
+
+        <Route
+         exact
          path="/search"
          render={() =>
           <SearchResults

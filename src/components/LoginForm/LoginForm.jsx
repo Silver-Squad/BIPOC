@@ -17,7 +17,7 @@ export default function Login (props) {
     formRef.current.checkValidity() ? setValidForm(false) : setValidForm(true);
     updateMessage('');
   }, [formValue]);
-  
+
   const handleSubmit = async (e) => {
     const { handleSignupOrLogin } = props;
     e.preventDefault();
@@ -37,16 +37,16 @@ export default function Login (props) {
       <div className="flex-1 flex flex-col justify-center py-12 px-4 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
         <div className="mx-auto w-full max-w-sm lg:w-96">
           <div className="flex justify-center">
-          <img width="150" 
-          src="/images/Auto-Mastery-fav.png" 
+          <img width="150"
+          src="/images/Auto-Mastery-fav.png"
           alt='logo'
           />
           </div>
           <h2 className="mt-6 text-3xl font-extrabold text-gray-900">Login to your account</h2>
           <div className="mt-8">
-       
+
             <div className="mt-6">
-              <form ref={formRef} autoComplete='off' onSubmit={handleSubmit}className="space-y-6">  
+              <form ref={formRef} autoComplete='off' onSubmit={handleSubmit}className="space-y-6">
               {message && <p>{message}</p>}
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700">
@@ -107,6 +107,3 @@ export default function Login (props) {
     </div>
     );
   }
-
-
-

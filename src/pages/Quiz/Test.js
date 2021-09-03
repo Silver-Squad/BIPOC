@@ -1,4 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+import PropTypes from 'prop-types';
+
+import Question from './Question';
 import Result from './Result'
 import quizQuestions from './quizQuestions'
 import Quiz from './Quiz'
@@ -150,8 +153,8 @@ class Test extends Component {
       return (
         <div className="QuizContainer">
           <div className="Quiz">
-            <div className="Quiz-header">
-              <img src="./favicon.ico" className="App-logo" alt="logo" />
+            <div className="Quiz-header pt-1 pb-1">
+              <img src="./images/diversify-logo.png" className="App-logo" alt="logo" />
             </div>
             <div className="Quiz-header-2">
               <h2>Diversity & Inclusion Quiz</h2>
