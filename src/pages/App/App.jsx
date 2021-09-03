@@ -99,8 +99,9 @@ class App extends Component {
          exact 
          path="/search"
          render={() =>
-          <SearchResults/>
-
+          <SearchResults
+          user={user}
+          />
         }
         />
 

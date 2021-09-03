@@ -1,8 +1,11 @@
 import React from "react";
+import { useState } from "react";
+import { useForm } from '../../hooks/useForm'
 import SearchBar from "../../components/SearchBar/SearchBar"
 
 export default function Homepage (props) {
-  
+    const [search, setSearch] = useState('')
+
     return (
       // header container
       <div>
@@ -26,7 +29,7 @@ export default function Homepage (props) {
         <h2 className="pl-20 text-1xl text-white flex items-center justify-left">Search for a company's D&I score here</h2>
         </div>
         <div className="pl-20 pt-2 pb-8">
-        <SearchBar />
+        <SearchBar search={search} setSearch={setSearch} />
           {/*<div className="bg-white w-10/12 flex items-center justify-center rounded-full shadow-xl">
              <input className="rounded-l-full w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none" id="search" type="text" placeholder="🔍   company name">
             </input>
@@ -34,8 +37,7 @@ export default function Homepage (props) {
               <button className="bg-search text-white rounded-full p-2 w-40 hover:bg-altbox focus:outline-none flex items-center justify-center font-bold">
                 Search
               </button> 
-            </div>
-              
+            </div>  
           </div>*/}
         </div>
       </div>

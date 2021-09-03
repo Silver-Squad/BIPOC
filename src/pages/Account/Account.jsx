@@ -33,7 +33,8 @@ export default function Account(props) {
     console.log(newProfile)
     history.push("/");
   }
-
+  
+  // function to determine if user has profile already, if yes, redirect to edit page
   useEffect(() => {
     const hasProfile = async () => {
       const hasData = await profileService.getAllByCurrentUser(props.user._id)

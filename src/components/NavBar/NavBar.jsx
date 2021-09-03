@@ -2,6 +2,9 @@ import { Fragment, useState, useEffect } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { LoginIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 import { Link } from "react-router-dom";
+import * as profileService from '../../services/profileService';
+import { useHistory } from "react-router-dom";
+
 import './NavBar.css';
 
 const navigation = [
@@ -18,8 +21,9 @@ function classNames(...classes) {
 }
 
 export default function NavBar(props) {
-
+  // const history = useHistory();
   const [loggedIn, setLoggedIn] = useState(false);
+  // const [account, setAccount] = useState(null);
 
   // checks if a user is logged in
   useEffect(() => {
@@ -29,6 +33,14 @@ export default function NavBar(props) {
     })();
   }, [props.user]);
 
+  // function to determine if user has profile already, if yes, redirect to edit page
+  // useEffect(() => {
+  //   const hasProfile = async () => {
+  //     const hasData = await profileService.getAllByCurrentUser(props.user._id)
+  //     if (hasData?.name)history.push('/profile/'{props.user._id})
+  //   } 
+  //   setAccount(hasData)
+  // }, []);
   
   return (
     <Disclosure as="nav" className="bg-current shadow-md">
@@ -81,13 +93,11 @@ export default function NavBar(props) {
                   {({ open }) => (
                     <>
                       <div>
-                        <Menu.Button className="bg-white rounded-full flex text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                        <Menu.Button className="bg-white px-1 py-1 rounded-full flex text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                           <span className="sr-only">Open user menu</span>
-                          <img
-                            className="h-8 w-8 rounded-full"
-                            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                            alt=""
-                          />
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                          </svg>
                         </Menu.Button>
                       </div>
                       <Transition
