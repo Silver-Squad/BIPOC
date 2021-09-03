@@ -53,19 +53,19 @@ class App extends Component {
   //   );
   // };
 
-  handleUpdateProfile = async (updatedProfileData) => {
-    const updatedProfile = await profileService.update(updatedProfileData);
-    updatedProfile.addedBy = {
-      name: this.state.user.name,
-      _id: this.state.user._id,
-    };
-    const newProfilesArray = this.state.Profiles.map((m) =>
-      m._id === updatedProfile._id ? updatedProfile : m
-    );
-    this.setState({ profiles: newProfilesArray }, () =>
-      this.props.history.push("/")
-    );
-  };
+  // handleUpdateProfile = async (updatedProfileData) => {
+  //   const updatedProfile = await profileService.update(updatedProfileData);
+  //   updatedProfile.addedBy = {
+  //     name: this.state.user.name,
+  //     _id: this.state.user._id,
+  //   };
+  //   const newProfilesArray = this.state.Profiles.map((m) =>
+  //     m._id === updatedProfile._id ? updatedProfile : m
+  //   );
+  //   this.setState({ profiles: newProfilesArray }, () =>
+  //     this.props.history.push("/")
+  //   );
+  // };
 
   render() {
     const { user } = this.state;
