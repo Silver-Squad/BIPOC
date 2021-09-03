@@ -1,7 +1,7 @@
-import "./Resources.css";
+import React from "react";
 
 export default function Resources (props) {
-  
+
     return (
       <div  className="ml-20 mr-20">
 
@@ -51,9 +51,11 @@ export default function Resources (props) {
                 <div className="ml-10 p-10">
                 Job Board for underrepresented folks in tech
                 </div>
-                <div className="flex justify-end mr-8 underline hover:text-blue-800 visited:text-purple-600"><a rel="noopener noreferrer" target="_blank" href="/resources/gethired">
+                {/* <div className="flex justify-end mr-8 underline hover:text-blue-800 visited:text-purple-600"><a rel="noopener noreferrer" target="_blank" href="/resources/gethired">
                 Read More</a>
-                </div>
+                </div> */}
+                <div className="flex justify-end mr-8">
+                Coming soon!</div>
               </div>
             </div>
 
@@ -67,9 +69,11 @@ export default function Resources (props) {
                 <div className="ml-10 p-10">
                 Compilation of ongoing and upcoming conferences, hackathons, meet-ups and networking communities to help people support each other in tech
                 </div>
-                <div className="flex justify-end mr-8 underline hover:text-blue-800 visited:text-purple-600"><a rel="noopener noreferrer" target="_blank" href="/resources/events">
+                {/* <div className="flex justify-end mr-8 underline hover:text-blue-800 visited:text-purple-600"><a rel="noopener noreferrer" target="_blank" href="/resources/events">
                 Read More</a>
-                </div>
+                </div> */}
+                <div className="flex justify-end mr-8">
+                Coming soon!</div>
               </div>
             </div>
 
@@ -116,9 +120,11 @@ export default function Resources (props) {
                 <div className="ml-10 p-10">
                 Scholarships for bootcamps, universities and tuition-free bootcamps to help underrepresented students and career-changers break into tech without the financial roacdblock
                 </div>
-                <div className="flex justify-end mr-8 underline hover:text-blue-800 visited:text-purple-600"><a rel="noopener noreferrer" target="_blank" href="/resources/education">
+                {/* <div className="flex justify-end mr-8 underline hover:text-blue-800 visited:text-purple-600"><a rel="noopener noreferrer" target="_blank" href="/resources/education">
                 Read More</a>
-                </div>
+                </div> */}
+                <div className="flex justify-end mr-8">
+                Coming soon!</div>
               </div>
             </div>
             <div>

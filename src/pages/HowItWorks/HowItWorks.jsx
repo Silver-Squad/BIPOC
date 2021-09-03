@@ -1,27 +1,25 @@
 
+
 export default function HowItWorks () {
 
-    return (
-      <>
-      <div className="ml-20 mr-20">
-        <div className="flex items-center justify-center">
-          <div className="grid grid-cols-2 gap-4">
-              <div className="mt-8 ml-6">
-                <h2 className="mt-6 text-6xl text-black font-bold flex">How It Works</h2>
-                <h2 className="mt-6 text-md text-black flex">
-                We utilize qualitative and quantitative data to create a comprehensive score of a company’s diversity and inclusion. We ask companies to be transparent and provide the data and information needed in order to receive a score.   </h2>
-
-                <h2 className="mt-6 text-md text-black flex">
-                These scores are imperfect and subject to change just as people and companies are. We focus on providing the tools for success and creating diverse teams to reflect a diverse world. </h2>
-              </div>
-              <div className="mt-10">
-                <img width="500"
-                src="/images/undraw-todo.png"
-                alt='team-spirit'
-                />
-              </div>
-          </div>
+  return (
+    // header container
+    <div className="ml-20 mr-20">
+      <div className="flex items-center justify-center">
+        <div className="grid grid-cols-2 gap-4">
+            <div className="mt-8 ml-6">
+            <h2 className="mt-6 text-6xl text-black font-bold flex">How It Works</h2>
+            <h2 className="mt-6 text-md text-black flex">We utilize qualitative and quantitative data to create a comprehensive score of a company’s diversity and inclusion. We ask companies to be transparent and provide the data and information needed in order to receive a score.</h2>
+            <h2 className="mt-6 text-md text-black flex">These scores are imperfect and subject to change just as people and companies are. We focus on providing the tools for success and creating diverse teams to reflect a diverse world.</h2>
+            </div>
+            <div className="mt-10">
+            <img width="500"
+            src="/images/undraw-todo.png"
+            alt='team-spirit'
+            />
+            </div>
         </div>
+      </div>
 
       <div>
         <div className="bg-askfor border-none leading-4 box-border h-15 w-275 p-4 mt-10 ml-40 mr-40 rounded-lg min-w-min">
@@ -35,19 +33,18 @@ export default function HowItWorks () {
             <li className="mb-1">Company Hiring Practices</li>
           </div>
         </div>
-      
+      </div>
 
-      {/* steps section */ }
-
+      {/* steps section */}
       <div className="ml-4 mr-4 bg-white">
         <div className="pt-6">
-          <h2 className="pb-2 text-4xl text-black font-bold flex items-center justify-center">The 4 steps to get a report</h2>
+        <h2 className="pb-2 text-4xl text-black font-bold flex items-center justify-center">The 4 steps to get a report</h2>
         </div>
 
         <div className="flex items-center justify-center">
           <div className="grid grid-cols-2 gap-4">
 
-          <div>
+            <div>
             <img width="300"
             src="/images/undraw-focus.png"
             alt='team-spirit'
@@ -66,7 +63,7 @@ export default function HowItWorks () {
                 Companies answer the questions in the D&I Test and fill out the data needed for a comprehensive score
                 </div>
               </div>
-        </div>
+            </div>
 
             <div>
               <div className="bg-none border-none box-border pb-7 pl-4 mt-5">
@@ -115,6 +112,7 @@ export default function HowItWorks () {
                 4
                 </div>
               </div>
+
               <div className="bg-altbox border-none leading-4 box-border h-130 w-275 p-4 rounded-lg min-w-min mr-4">
                 <div className="ml-10 p-4">
                 Receive your score and overall report via e-mail and listed on your profile
@@ -130,6 +128,8 @@ export default function HowItWorks () {
               </div>
 
           </div>
+        </div>
+
         <div className="p-10 pt-6 pb-8">
             <div className="p-4 flex items-center justify-center">
               <button className="bg-test text-white rounded-full w-5/12 p-2 hover:bg-homepage focus:outline-none flex items-center justify-center font-extrabold">
@@ -139,10 +139,6 @@ export default function HowItWorks () {
             </div>
         </div>
       </div>
-      </div>
-     </div>
-    </div>
-    
-    </>
-    );
-  }
+  </div>
+  );
+}

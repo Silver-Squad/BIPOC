@@ -1,8 +1,6 @@
 import React from "react";
 
-
 export default function Education (props) {
-  
 
     return (
       <div  className="ml-20 mr-20">

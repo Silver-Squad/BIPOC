@@ -1,8 +1,7 @@
 import React from "react";
 
-
 export default function GetHired (props) {
- 
+
     return (
       <div  className="ml-20 mr-20">
 
