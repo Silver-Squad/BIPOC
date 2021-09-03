@@ -1,8 +1,8 @@
-
-
+import './Footer.css';
 export default function Footer() {
 
   return (
+  <footer>
   <div className="bg-navbar text-white">
       <div className="flex items-center justify-center">
           <div className="grid grid-cols-4 gap-4 m-20">
@@ -13,5 +13,6 @@ export default function Footer() {
           </div>
       </div>
     </div>
+  </footer>
   )
 }

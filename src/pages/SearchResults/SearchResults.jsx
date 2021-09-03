@@ -8,32 +8,34 @@ import ProfilePreview from '../../components/ProfilePreview/ProfilePreview';
 
 const SearchResults = props => {
     const [allprofiles, setAllprofiles] = useState([]);
-    const [search, setSearch] = useForm({
-        search: "", 
-    })
+    const query = useLocation()
+    // console.log(q)
+    const [search, setSearch] = useState('')
     const [filteredResults, setFilteredResults] = useState([]);
-    const {currentUser} = props;
+    // const {currentUser} = props;
 
     useEffect(() => {
         (async function() {
             let profiles = await profileService.getAll();
             setAllprofiles(profiles);
+            const q = query?.search?.split('=')[1] || ""
+            if (q) setSearch(q)
         })();
     }, [])
     
     useEffect(() => {
         setFilteredResults(
-            allprofiles.filter(profile => profile.title.toLowerCase().includes(search.text.toLowerCase()))   
+            allprofiles.filter(profile => profile.name.toLowerCase().includes(search.toLowerCase()))   
         )      
-    }, [search.text])
+    }, [search])
 
     // returns a list of all profiles if search box is left blank
-    const searchResults = search.text ? filteredResults : allprofiles;
+    const searchResults = search ? filteredResults : allprofiles;
     console.log(searchResults)
     
   return (
     <>
-        <section className="w-3/4 mt-6 mx-auto">
+        <section className="mb-20 w-3/4 mt-6 mx-auto">
             {/* <div id="search" className="w-2/5 flex items-center mb-4"> */}
                 {/* <p>Search: &nbsp;</p>  */}
             <SearchBar search={search} setSearch={setSearch}/>

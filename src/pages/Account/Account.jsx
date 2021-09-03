@@ -20,8 +20,10 @@ export default function Account(props) {
     state: "",
     zip: "",
     website: "",
+    linkedin: "",
     initiativeOne: "",
     initiativeTwo: "",
+    initiativeThree: "",
     empRatio: "0-5%",
     leaderRatio: "0-5%",
     score: "0",
@@ -33,7 +35,8 @@ export default function Account(props) {
     console.log(newProfile)
     history.push("/");
   }
-
+  
+  // function to determine if user has profile already, if yes, redirect to edit page
   useEffect(() => {
     const hasProfile = async () => {
       const hasData = await profileService.getAllByCurrentUser(props.user._id)
@@ -106,6 +109,25 @@ export default function Account(props) {
                     name="website"
                     id="website"
                     value={state.website}
+                    onChange={handleChange}
+                    className="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md"
+                  />
+                </div>
+              </div>
+
+              <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
+                <label
+                  htmlFor="first-name"
+                  className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
+                >
+                  Linkedin
+                </label>
+                <div className="mt-1 sm:mt-0 sm:col-span-2">
+                  <input
+                    type="text"
+                    name="website"
+                    id="website"
+                    value={state?.linkedin}
                     onChange={handleChange}
                     className="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md"
                   />
@@ -235,6 +257,25 @@ export default function Account(props) {
               name="initiativeTwo"
               rows={3}
               value={state.initiativeTwo}
+              onChange={handleChange}
+              className="max-w-lg shadow-sm block w-full focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border border-gray-300 rounded-md"
+            />
+          </div>
+        </div>
+
+        <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
+          <label
+            htmlFor="about"
+            className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
+          >
+            Intitiative Three
+          </label>
+          <div className="mt-1 sm:mt-0 sm:col-span-2">
+            <textarea
+              id="initiativeThree"
+              name="initiativeThree"
+              rows={3}
+              value={state.initiativeThree}
               onChange={handleChange}
               className="max-w-lg shadow-sm block w-full focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border border-gray-300 rounded-md"
             />
