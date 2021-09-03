@@ -1,8 +1,22 @@
 import './Profile.css';
-import React from 'react';
+import React, { useState } from 'react';
 import SearchBar from '../../components/SearchBar/SearchBar'
+import { useParams } from 'react-router-dom';
+import { useEffect } from 'react';
+import * as profileService from '../../services/profileService'
 
 export default function Profile(props) {
+    const {id} = useParams()
+    const [profile, setProfile] = useState(null)
+
+    useEffect(() => {
+      async function fetchProfile(){
+        const profileData = await profileService.getOne(id)
+        setProfile(profileData)
+      }
+      fetchProfile()
+    }, [])
+    
 
     return (
       <main>
@@ -24,8 +38,8 @@ export default function Profile(props) {
               /> 
               </div>
               {/* {company information} */}
-              <div className="ml-2 my-auto w-3/5 ">
-                <h1 className='small-info-title'>Company Name</h1>
+              <div className="ml-2 my-auto w-3/5">
+                <h1 className='small-info-title'>{profile?.name}</h1>
                 <ul className='small-info'>
                   <li>San Francisco, USA</li>
                   <li>123-456-7890</li>

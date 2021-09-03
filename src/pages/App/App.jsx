@@ -88,9 +88,9 @@ class App extends Component {
         {/* route for company profiles */}
         <Route
           exact
-          path="/profile"
-          render={({ history }) => (
-            <Profile history={history} currentUser={user} />
+          path="/profile/:id"
+          render={() => (
+            <Profile currentUser={user} />
           )}
         />
 

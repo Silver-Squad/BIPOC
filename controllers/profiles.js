@@ -22,8 +22,7 @@ function index(req, res) {
 
 // return all profiles created by the current user
 function indexCurrentUser(req, res) {                   
-  Profile.find({addedBy: req.params.userid})
-    .populate('addedBy')
+  Profile.findOne({addedBy: req.params.userid})
     .then(profiles => res.json(profiles))
     .catch(err => {res.json(err)})
 }

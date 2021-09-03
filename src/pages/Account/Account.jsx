@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { useHistory } from "react-router-dom";
 import { useForm } from "../../hooks/useForm";
 import * as profileService from "../../services/profileService";
+import userEvent from "@testing-library/user-event";
 
 export default function Account(props) {
   //  allow us history access for routing
@@ -32,6 +33,14 @@ export default function Account(props) {
     console.log(newProfile)
     history.push("/");
   }
+
+  useEffect(() => {
+    const hasProfile = async () => {
+      const hasData = await profileService.getAllByCurrentUser(props.user._id)
+      if (hasData?.name)history.push('/account/edit')
+    } 
+    hasProfile()
+  }, []);
 
   // hook to check form validity
   useEffect(() => {
