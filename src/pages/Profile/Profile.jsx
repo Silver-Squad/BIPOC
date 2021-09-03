@@ -176,48 +176,40 @@ export default function Profile(props) {
                   <div>
                     <h1>Company's Initiatives</h1>
                   </div>
-                  <div className='flex'>
-                    {/* <div className='w-1/2 '>Left
-                      <div className='w-1/2'>
-                        <ul className=''>
-                          <li className=''>1.</li>
-                          <li className=''>2.</li>
-                          <li className=''>3.</li>
-                        </ul>
-                      </div> */}
-                      {/* <div className='block w-1/2'>
-                        <ul className=''>
-                          <li className=''>Title</li>
-                          <li className=''>Title</li>
-                          <li className=''>Title</li>
-                        </ul>
-                      </div>
-                    </div> */}
-                    <div className=''>Right Side
-                      <ul className='right-side'>
+                  <div className='flex mt-4'>
+                      <ul className='initiatives mx-auto'>
                           <li>{profile?.initiativeOne}</li>
                           <li>{profile?.initiativeTwo}</li>
                           <li>{profile?.initiativeThree}</li>
                       </ul>    
-                    </div>
                   </div>
-                
-                
                 </div>
                   
 
                 <div className="tab-pane fade" id="demographics" role="tabpanel" aria-labelledby="demographics-tab">
-                <div className='w-1/2'>Right Side
-                      <ul className='right-side'>
-                          <li>{profile?.empRatio}</li>
-                          <li>{profile?.leaderRatio}</li>
-                          <li>Initiative Three Content</li>
-                      </ul>    
+                  <div className='mx-auto'>
+                    <div>
+                      <h1>Company's Demographics</h1>
                     </div>
-
+                    <div className='flex mt-10'>
+                      <ul className='demo mx-auto'>
+                        <h2>Percentage of minority employees</h2>
+                        <li>{profile?.empRatio}</li>
+                        <h2>Percentage of minority employees in leadership positions</h2> 
+                        <li>{profile?.leaderRatio}</li>
+                      </ul>  
+                    </div>  
+                  </div>
                 </div>
 
-                <div className="tab-pane fade" id="score" role="tabpanel" aria-labelledby="score-tab">Detailed Score</div>
+                <div className="tab-pane fade" id="score" role="tabpanel" aria-labelledby="score-tab">
+                  <div>
+                        <h1>Detailed Score</h1>
+                  </div>
+                  <div className='overview-content mt-10'>
+                    <p>A detailed breakdown of how the company responded to each question will be added at a later date</p>
+                  </div>
+                </div>
                 
                 {/* Inclusion index to be included in future version  */}
                 {/* <div className="tab-pane fade" id="inclusion" role="tabpanel" aria-labelledby="inclusion-tab">Inclusion Index</div> */}
