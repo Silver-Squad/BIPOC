@@ -38,34 +38,6 @@ class App extends Component {
     this.setState({ user: authService.getUser() });
   };
 
-  // handleAddProfiles = async (newProfileData) => {
-  //   const newProfile = await profileService.create(newProfileData);
-  //   console.log(newProfile);
-  //   newProfile.addedBy = {
-  //     name: this.state.user.name,
-  //     _id: this.state.user._id,
-  //   };
-  //   this.setState(
-  //     (state) => ({
-  //       profiles: [...state.profiles, newProfile],
-  //     }),
-  //     () => this.props.history.push("/profile")
-  //   );
-  // };
-
-  // handleUpdateProfile = async (updatedProfileData) => {
-  //   const updatedProfile = await profileService.update(updatedProfileData);
-  //   updatedProfile.addedBy = {
-  //     name: this.state.user.name,
-  //     _id: this.state.user._id,
-  //   };
-  //   const newProfilesArray = this.state.Profiles.map((m) =>
-  //     m._id === updatedProfile._id ? updatedProfile : m
-  //   );
-  //   this.setState({ profiles: newProfilesArray }, () =>
-  //     this.props.history.push("/")
-  //   );
-  // };
 
   render() {
     const { user } = this.state;

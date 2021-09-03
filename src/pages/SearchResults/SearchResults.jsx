@@ -18,7 +18,8 @@ const SearchResults = props => {
         (async function() {
             let profiles = await profileService.getAll();
             setAllprofiles(profiles);
-        })();}, [])
+        })();
+    }, [])
     
     useEffect(() => {
         setFilteredResults(
@@ -33,11 +34,11 @@ const SearchResults = props => {
   return (
     <>
         <section className="w-3/4 mt-6 mx-auto">
-            <div id="search" className="w-2/5 flex items-center mb-4">
-                <p>Search: &nbsp;</p> 
-                <SearchBar search={search} setSearch={setSearch}/>
-            </div>
-            <ul className="space-y-3">
+            {/* <div id="search" className="w-2/5 flex items-center mb-4"> */}
+                {/* <p>Search: &nbsp;</p>  */}
+            <SearchBar search={search} setSearch={setSearch}/>
+            {/* </div> */}
+            <ul className="mt-10 space-y-3">
                 {searchResults.map((profile, idx) => (
                     <li key={idx} className="bg-white shadow overflow-auto rounded-md px-6 py-4">
                         <ProfilePreview key={idx} user={props.user} profile={profile} />

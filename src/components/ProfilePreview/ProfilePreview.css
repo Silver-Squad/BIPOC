@@ -28,9 +28,13 @@
   font-weight: bold;
   font-size: 22px;
   margin: 5px 10px 5px 0;
+  text-transform: capitalize;
 }
 
-.profile-preview-bottom {
-  font-weight: bold;
-  font-size: 12px;
+
+.profile-preview-desc {
+  font-size: 16px;
+  margin: 5px 10px 5px 0;
+  text-transform: capitalize;
 }
+

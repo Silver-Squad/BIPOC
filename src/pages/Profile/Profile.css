@@ -62,12 +62,14 @@ h1 {
 
 .small-info-title {
   text-align: start;
+  text-transform: capitalize;
 }
 
 .small-info {
   font-size: 14px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   text-align: start;
+  text-transform: capitalize;
 }
 
 .score-h1 {

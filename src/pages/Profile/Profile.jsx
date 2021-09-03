@@ -41,9 +41,9 @@ export default function Profile(props) {
               <div className="ml-2 my-auto w-3/5">
                 <h1 className='small-info-title'>{profile?.name}</h1>
                 <ul className='small-info'>
-                  <li>San Francisco, USA</li>
-                  <li>123-456-7890</li>
-                  <li>Founded 2021</li>
+                  <li>{profile?.city}, {profile?.state.toUpperCase()} {profile?.zip}</li>
+                  <li></li>
+                  {/* <li>{profile?.website}</li> */}
                 </ul>
               </div>
               {/* {links and approved badge} */}
@@ -63,12 +63,14 @@ export default function Profile(props) {
                   alt="building"
                   className=""
                   /> 
+                  <a href={profile?.website} rel="noreferrer" target="_blank">
                   <img
                   width='25'
                   src="/images/icons/globe.svg"
                   alt="building"
                   className="ml-2"
                   />   
+                  </a>
                 </div>
               </div>
             </div>
@@ -177,8 +179,8 @@ export default function Profile(props) {
                     </div>
                     <div className='w-1/2'>Right Side
                       <ul className='right-side'>
-                          <li>Initiative One Content</li>
-                          <li>Initiative Two Content</li>
+                          <li>{profile?.initiativeOne}</li>
+                          <li>{profile?.initiativeTwo}</li>
                           <li>Initiative Three Content</li>
                       </ul>    
                     </div>

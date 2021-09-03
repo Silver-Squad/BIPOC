@@ -29,6 +29,7 @@ export default function NavBar(props) {
     })();
   }, [props.user]);
 
+  
   return (
     <Disclosure as="nav" className="bg-current shadow-md">
       {({ open }) => (

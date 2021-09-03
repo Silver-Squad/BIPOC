@@ -12,8 +12,8 @@ const SearchBar = props => {
             </div>
             <input
               type="text"
-              name="name"
-              id="name"
+              name="text"
+              id="search"
               onChange={props.setSearch}
               className="pl-10 shadow-md focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 px-10 rounded-full mr-4"
               placeholder="Company Name"
