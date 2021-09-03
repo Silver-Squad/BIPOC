@@ -33,13 +33,14 @@ export default function NavBar(props) {
     })();
   }, [props.user]);
 
-  // function to determine if user has profile already, if yes, redirect to edit page
+  // // function to retrieve user profile id
   // useEffect(() => {
   //   const hasProfile = async () => {
   //     const hasData = await profileService.getAllByCurrentUser(props.user._id)
-  //     if (hasData?.name)history.push('/profile/'{props.user._id})
+  //     setAccount(hasData)
+  //     if (hasData?.name)history.push(`/profile/${account.id}`)
   //   } 
-  //   setAccount(hasData)
+  //   hasProfile()
   // }, []);
   
   return (
@@ -114,7 +115,7 @@ export default function NavBar(props) {
                           static
                           className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
                         >
-                          <Menu.Item>
+                          {/* <Menu.Item>
                             {({ active }) => (
                               <a
                                 href="/profile"
@@ -126,7 +127,7 @@ export default function NavBar(props) {
                                 Your Profile
                               </a>
                             )}
-                          </Menu.Item>
+                          </Menu.Item> */}
                           <Menu.Item>
                             {({ active }) => (
                               <a
