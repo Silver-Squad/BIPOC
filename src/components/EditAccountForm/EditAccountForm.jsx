@@ -110,10 +110,10 @@ return (
                 <div className="mt-1 sm:mt-0 sm:col-span-2">
                   <input
                     type="text"
-                    name="street-address"
-                    id="street-address"
+                    name="street"
+                    id="street"
                     autoComplete="street-address"
-                    value={state?.address}
+                    value={state?.street}
                     onChange={setState}
                     className="block max-w-lg w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border-gray-300 rounded-md"
                   />

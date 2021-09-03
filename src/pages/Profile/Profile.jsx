@@ -43,6 +43,7 @@ export default function Profile(props) {
               <div className="ml-2 my-auto w-3/5">
                 <h1 className='small-info-title'>{profile?.name}</h1>
                 <ul className='small-info'>
+                  <li>{profile?.street}</li>
                   <li>{profile?.city}, {profile?.state.toUpperCase()} {profile?.zip}</li>
                   <li></li>
                   {/* <li>{profile?.website}</li> */}
