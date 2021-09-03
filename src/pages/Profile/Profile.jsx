@@ -3,10 +3,12 @@ import React, { useState } from 'react';
 import SearchBar from '../../components/SearchBar/SearchBar'
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import * as profileService from '../../services/profileService'
 
 export default function Profile(props) {
     const {id} = useParams()
+    const [search, setSearch] = useState('')
     const [profile, setProfile] = useState(null)
 
     useEffect(() => {
@@ -21,7 +23,7 @@ export default function Profile(props) {
     return (
       <main>
         {/* <SearchBar search={search} setSearch={setSearch}/> */}
-        <SearchBar />
+        <SearchBar search={search} setSearch={setSearch}/>
 
         {/* top card */}
         <div className="w-5/6 mx-auto flex">
@@ -57,20 +59,22 @@ export default function Profile(props) {
                   /> 
                 </div>
                 <div className='flex justify-end'>
+                  {/* <a href={profile?.linkedin} rel="noopener noreferrer" target="_blank"> */}
                   <img
                   width='25'
                   src="/images/icons/icons8-linkedin.svg"
                   alt="building"
                   className=""
                   /> 
-                  <a href={profile?.website} rel="noreferrer" target="_blank">
+                  {/* </a> */}
+                  {/* <a href={profile?.website} rel="noreferrer" target="_blank"> */}
                   <img
                   width='25'
                   src="/images/icons/globe.svg"
                   alt="building"
                   className="ml-2"
                   />   
-                  </a>
+                  {/* </a> */}
                 </div>
               </div>
             </div>
@@ -154,34 +158,46 @@ export default function Profile(props) {
 
                 <div className="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
                   <h1>Overview</h1>
+                  <div className='overview-content mt-10'>
+                  <p>Future versions of the test will be broken up into the following different categories: </p>
+                  <ul className='mt-10'>
+                      <li>Trajectory</li>
+                      <li>Diversity</li>
+                      <li>Inclusion</li>
+                      <li>Hiring</li>
+                  </ul>
+                  <p className='mt-4'>These categories will be used to give a detailed breakdown of the companies Diversity &#38; Inclusion Score </p>
+                  </div>
                 </div>
+                  
+                
 
                 <div className="tab-pane fade" id="initiatives" role="tabpanel" aria-labelledby="initiatives-tab">
                   <div>
                     <h1>Company's Initiatives</h1>
                   </div>
                   <div className='flex'>
-                    <div className='w-1/2 '>Left
+                    {/* <div className='w-1/2 '>Left
                       <div className='w-1/2'>
                         <ul className=''>
                           <li className=''>1.</li>
                           <li className=''>2.</li>
                           <li className=''>3.</li>
                         </ul>
-                      </div>
-                      <div className='block w-1/2'>
+                      </div> */}
+                      {/* <div className='block w-1/2'>
                         <ul className=''>
                           <li className=''>Title</li>
                           <li className=''>Title</li>
                           <li className=''>Title</li>
                         </ul>
                       </div>
-                    </div>
-                    <div className='w-1/2'>Right Side
+                    </div> */}
+                    <div className=''>Right Side
                       <ul className='right-side'>
                           <li>{profile?.initiativeOne}</li>
                           <li>{profile?.initiativeTwo}</li>
-                          <li>Initiative Three Content</li>
+                          <li>{profile?.initiativeThree}</li>
                       </ul>    
                     </div>
                   </div>
@@ -191,7 +207,13 @@ export default function Profile(props) {
                   
 
                 <div className="tab-pane fade" id="demographics" role="tabpanel" aria-labelledby="demographics-tab">
-
+                <div className='w-1/2'>Right Side
+                      <ul className='right-side'>
+                          <li>{profile?.empRatio}</li>
+                          <li>{profile?.leaderRatio}</li>
+                          <li>Initiative Three Content</li>
+                      </ul>    
+                    </div>
 
                 </div>
 

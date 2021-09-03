@@ -7,9 +7,6 @@ export default function EditAccountForm(props) {
   const [formInvalid, setValidForm] = useState(true);
   const [state, setState] = useForm(props.account);
 
-  console.log('blah' , props.account)
-  console.log('hihi' , state)
-
   // hook to check form validity 
   useEffect(() => {
   formRef.current.checkValidity() ? setValidForm(false) : setValidForm(true);
@@ -78,6 +75,25 @@ return (
                     name="website"
                     id="website"
                     value={state?.website}
+                    onChange={setState}
+                    className="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md"
+                  />
+                </div>
+              </div>
+
+              <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
+                <label
+                  htmlFor="first-name"
+                  className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
+                >
+                  Linkedin
+                </label>
+                <div className="mt-1 sm:mt-0 sm:col-span-2">
+                  <input
+                    type="text"
+                    name="linkedin"
+                    id="linkedin"
+                    value={state?.linkedin}
                     onChange={setState}
                     className="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md"
                   />
@@ -212,6 +228,27 @@ return (
             />
           </div>
         </div>
+
+        <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
+          <label
+            htmlFor="about"
+            className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
+          >
+            Intitiative Three
+          </label>
+          <div className="mt-1 sm:mt-0 sm:col-span-2">
+            <textarea
+              id="initiativeThree"
+              name="initiativeThree"
+              rows={3}
+              value={state?.initiativeThree}
+              onChange={setState}
+              className="max-w-lg shadow-sm block w-full focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border border-gray-300 rounded-md"
+            />
+          </div>
+        </div>
+
+
 
         <div>
           <h3 className="mt-4 text-lg leading-6 font-medium text-gray-900">

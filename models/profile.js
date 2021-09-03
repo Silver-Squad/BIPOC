@@ -11,8 +11,10 @@ const profileSchema = new Schema({
     state: String, 
     zip: Number,
     website: String,
+    linkedin: String,
     initiativeOne: String, 
     initiativeTwo: String, 
+    initiativeThree: String,
     empRatio: {
       type: String, 
       enum: ['0-5%','5-15%','15-25%','+25%',]
