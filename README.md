@@ -2,6 +2,18 @@
 
 Under Construction
 
+# Description
+This application focuses on improving diversity in the workplace. Employees can research companies to gage how diverse a certain company is or isn't and check to see if that company is working on improving their Diversity & Inclusion practices. Companies can submit information on their D&I initiatives, take the Diversify D&I Quiz to see what areas they need to improve on, and find resources on how to improve their D&I.
+
+# Planning Story
+This project was created by a team of General Assembly UX/UI and Software Engineer Alum who gathered together for the 2021 Summer Hackathon.
+
+Our prompt was: "How might we increase BIPOC representation on leadership teams at small tech companies (50-500 employees)?"
+
+After discussion and research, we choose two main areas of focus:
+1. How to make D&I information and BIPOC representation in companies transparent and easy for job seekers to find
+2. Provide resources to support both users and companies to create comfortable diverse and inclusive workplaces
+
 # Tech Framework
 
 ### This app uses:
@@ -23,3 +35,11 @@ Under Construction
 ### This app is hosted at:
 * [GitHub Repo](https://github.com/Silver-Squad/BIPOC)
 * [Heroku Hosted Site](https://diversify-ss.herokuapp.com/)
+
+## Unsolved Problems
+- Add more dynamic messaging on successful test actions
+- Have test score update company profile
+- Make client more mobile-friendly
+- Add community message board feature
+- Add more info and update design for varous resources pages
+- Add ability for Employee Users to leave input and reviews for companies
