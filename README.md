@@ -1,6 +1,6 @@
 # Diversify
 
-Under Consturction
+Under Construction
 
 # Tech Framework
 
