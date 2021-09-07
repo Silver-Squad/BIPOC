@@ -1,7 +1,5 @@
 # Diversify
 
-Under Construction
-
 # Description
 This application focuses on improving diversity in the workplace. Employees can research companies to gage how diverse a certain company is or isn't and check to see if that company is working on improving their Diversity & Inclusion practices. Companies can submit information on their D&I initiatives, take the Diversify D&I Quiz to see what areas they need to improve on, and find resources on how to improve their D&I.
 
