@@ -10,7 +10,7 @@ Our prompt was: "How might we increase BIPOC representation on leadership teams 
 
 After discussion and research, we choose two main areas of focus:
 1. How to make D&I information and BIPOC representation in companies transparent and easy for job seekers to find
-2. Provide resources to support both users and companies to create comfortable diverse and inclusive workplaces
+2. Provide resources to support both users and companies to create comfortable, diverse, and inclusive workplaces
 
 ## Tech Framework
 
